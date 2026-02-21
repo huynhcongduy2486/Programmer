@@ -1,33 +1,79 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Huỳnh Công Duy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huỳnh Công Duy | Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="overlay"></div>
+<nav>
+    <div class="logo">Duy</div>
+    <div class="menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-<div class="content">
+<section class="hero">
+    <h1>Huỳnh Công Duy</h1>
+    <h2 id="typing"></h2>
+</section>
 
-  <div class="lang">
-    <button onclick="setLang('vi')">VI</button>
-    <button onclick="setLang('en')">EN</button>
-  </div>
+<section id="about">
+    <h2>About Me</h2>
+    <p>Mình là sinh viên đam mê lập trình và xây dựng web chuyên nghiệp.</p>
+</section>
 
-  <div class="avatar-wrapper">
-    <img src="avatar.jpg" class="avatar">
-  </div>
+<section id="skills">
+    <h2>Skills</h2>
 
-  <h1>Hello, I'm</h1>
-  <h2><span>Huỳnh Công Duy</span></h2>
-  <h3 id="role">Machine Learning Engineer</h3>
-  <p id="desc">Passionate about AI technology and holistic wellness</p>
+    <div class="skill">
+        <p>HTML</p>
+        <div class="bar"><div style="width:90%"></div></div>
+    </div>
 
-</div>
+    <div class="skill">
+        <p>CSS</p>
+        <div class="bar"><div style="width:85%"></div></div>
+    </div>
 
-<script src="main.js"></script>
+    <div class="skill">
+        <p>Python</p>
+        <div class="bar"><div style="width:80%"></div></div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>Text Animation</h3>
+        <p>Hiệu ứng chữ bằng Python.</p>
+    </div>
+
+    <div class="card">
+        <h3>Quiz App C++</h3>
+        <p>Ứng dụng tạo đề toán tự động.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <input type="text" placeholder="Tên">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Tin nhắn"></textarea>
+    <button>Gửi</button>
+</section>
+
+<footer>
+    © 2026 Huỳnh Công Duy
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
