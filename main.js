@@ -1,13 +1,13 @@
-const text = "Web Developer | Programmer | Student";
-let i = 0;
-const speed = 80;
+// Simple scroll animation
+document.querySelectorAll('section').forEach(section => {
+  section.style.opacity = 0;
+});
 
-function typeEffect(){
-    if(i < text.length){
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeEffect, speed);
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('section').forEach(section => {
+    if(window.scrollY + window.innerHeight > section.offsetTop + 100){
+       section.style.opacity = 1;
+       section.style.transform = 'translateY(0)';
     }
-}
-
-window.onload = typeEffect;
+  });
+});
