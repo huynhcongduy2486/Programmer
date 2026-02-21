@@ -1,17 +1,24 @@
-const sections = document.querySelectorAll("section");
+function setLang(lang){
+  if(lang === 'en'){
+    document.getElementById("subtitle").innerText =
+      "Programmer | Technology Student";
 
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const top = window.scrollY + window.innerHeight;
-    if(top > sec.offsetTop + 100){
-      sec.style.opacity = 1;
-      sec.style.transform = "translateY(0)";
-    }
-  });
-});
+    document.getElementById("aboutTitle").innerText = "About Me";
+    document.getElementById("aboutText").innerText =
+      "I am a student passionate about programming and building real-world technology products.";
 
-sections.forEach(sec=>{
-  sec.style.opacity=0;
-  sec.style.transform="translateY(40px)";
-  sec.style.transition="all 0.8s ease";
-});
+    document.getElementById("skillTitle").innerText = "Skills";
+    document.getElementById("bookTitle").innerText = "Programming Books";
+  }
+  else{
+    document.getElementById("subtitle").innerText =
+      "Lập trình viên | Sinh viên công nghệ";
+
+    document.getElementById("aboutTitle").innerText = "Giới thiệu";
+    document.getElementById("aboutText").innerText =
+      "Tôi là sinh viên đam mê lập trình và xây dựng sản phẩm công nghệ thực tế.";
+
+    document.getElementById("skillTitle").innerText = "Kỹ năng";
+    document.getElementById("bookTitle").innerText = "Sách về lập trình";
+  }
+}
