@@ -1,12 +1,13 @@
-function setLang(lang) {
-  if (lang === "vi") {
-    document.getElementById("role").innerText = "Kỹ sư Machine Learning";
-    document.getElementById("desc").innerText =
-      "Đam mê công nghệ AI và phát triển toàn diện.";
-  } else {
-    document.getElementById("role").innerText =
-      "Machine Learning Engineer";
-    document.getElementById("desc").innerText =
-      "Passionate about AI technology and holistic wellness.";
-  }
+const text = "Web Developer | Programmer | Student";
+let i = 0;
+const speed = 80;
+
+function typeEffect(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, speed);
+    }
 }
+
+window.onload = typeEffect;
