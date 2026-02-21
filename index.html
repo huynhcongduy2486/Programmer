@@ -12,37 +12,27 @@
 
 <nav>
   <div class="logo">Duy</div>
-  <div class="menu">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <div>
+    <button onclick="setLang('vi')" class="lang-btn">VI</button>
+    <button onclick="setLang('en')" class="lang-btn">EN</button>
   </div>
 </nav>
 
 <section class="hero">
   <img src="assets/avatar.jpg" class="avatar">
   <h1>Huỳnh Công Duy</h1>
-  <p class="subtitle">Web Developer | Programmer | Student</p>
-  <a href="#contact" class="btn">Get In Touch</a>
+  <p id="subtitle">Lập trình viên | Sinh viên công nghệ</p>
 </section>
 
 <section id="about">
-  <h2>About Me</h2>
-  <p>Sinh viên đam mê lập trình và xây dựng sản phẩm công nghệ thực tế.</p>
-</section>
-
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="card">
-    <h3>Web Developer</h3>
-    <p>Xây dựng website và tối ưu trải nghiệm người dùng.</p>
-  </div>
+  <h2 id="aboutTitle">Giới thiệu</h2>
+  <p id="aboutText">
+    Tôi là sinh viên đam mê lập trình và xây dựng sản phẩm công nghệ thực tế.
+  </p>
 </section>
 
 <section id="skills">
-  <h2>Technical Skills</h2>
+  <h2 id="skillTitle">Kỹ năng</h2>
 
   <div class="skill">
     <span>HTML</span>
@@ -60,26 +50,23 @@
   </div>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
+<section id="books">
+  <h2 id="bookTitle">Sách về lập trình</h2>
 
   <div class="card">
-    <h3>Text Animation Python</h3>
-    <p>Hiệu ứng chữ xuất video MP4 bằng Python.</p>
+    <h3>Clean Code</h3>
+    <p>Cuốn sách giúp viết code sạch và chuyên nghiệp.</p>
   </div>
 
   <div class="card">
-    <h3>Quiz App C++</h3>
-    <p>Chương trình tạo đề toán tự động cho trẻ em.</p>
+    <h3>Introduction to Algorithms</h3>
+    <p>Tài liệu nền tảng về cấu trúc dữ liệu và thuật toán.</p>
   </div>
-</section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <input type="text" placeholder="Tên">
-  <input type="email" placeholder="Email">
-  <textarea placeholder="Tin nhắn"></textarea>
-  <button>Send</button>
+  <div class="card">
+    <h3>Python Crash Course</h3>
+    <p>Học Python từ cơ bản đến nâng cao.</p>
+  </div>
 </section>
 
 <footer>
