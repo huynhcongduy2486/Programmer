@@ -3,75 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nguyễn Gia Huy | Portfolio</title>
+<title>Huỳnh Công Duy | Portfolio</title>
 
-<link rel="stylesheet" href="assets/css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+<nav>
+  <div class="logo">Duy</div>
+  <div class="menu">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<section id="hero">
-  <h1>Nguyễn Gia Huy</h1>
-  <p>Passionate about AI technology and holistic wellness</p>
+<section class="hero">
+  <img src="assets/avatar.jpg" class="avatar">
+  <h1>Huỳnh Công Duy</h1>
+  <p class="subtitle">Web Developer | Programmer | Student</p>
   <a href="#contact" class="btn">Get In Touch</a>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>Hi — I’m Nguyễn Gia Huy ... I design and develop tech-driven solutions that address real-world challenges.</p>
+  <p>Sinh viên đam mê lập trình và xây dựng sản phẩm công nghệ thực tế.</p>
 </section>
 
 <section id="experience">
   <h2>Experience</h2>
-  <p>Web Developer & Project Manager at Duong Lifestyle, Web Developer & Marketing Specialist at Yên Văn...</p>
-</section>
-
-<section id="achievements">
-  <h2>Achievements</h2>
-  <p>National Scientific Report, Outstanding Volunteer, Int’l Student Forum ...</p>
+  <div class="card">
+    <h3>Web Developer</h3>
+    <p>Xây dựng website và tối ưu trải nghiệm người dùng.</p>
+  </div>
 </section>
 
 <section id="skills">
   <h2>Technical Skills</h2>
-  <div class="skill-bar"><span>Python</span><div><div class="fill" style="width:90%"></div></div></div>
-  <div class="skill-bar"><span>JavaScript</span><div><div class="fill" style="width:80%"></div></div></div>
-  <div class="skill-bar"><span>AI/ML Frameworks</span><div><div class="fill" style="width:85%"></div></div></div>
+
+  <div class="skill">
+    <span>HTML</span>
+    <div class="bar"><div style="width:90%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>CSS</span>
+    <div class="bar"><div style="width:85%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>Python</span>
+    <div class="bar"><div style="width:80%"></div></div>
+  </div>
 </section>
 
 <section id="projects">
-  <h2>Featured Projects</h2>
-  <div class="project">
-    <h3>GAN Brain Imaging Project</h3>
-    <p>Medical imaging enhancement with GAN for better diagnosis.</p>
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>Text Animation Python</h3>
+    <p>Hiệu ứng chữ xuất video MP4 bằng Python.</p>
   </div>
-  <div class="project">
-    <h3>AI Logistics Optimization</h3>
-    <p>Delivery optimization using ML — 30% cost reduction.</p>
+
+  <div class="card">
+    <h3>Quiz App C++</h3>
+    <p>Chương trình tạo đề toán tự động cho trẻ em.</p>
   </div>
 </section>
 
 <section id="contact">
-  <h2>Get In Touch</h2>
-  <form>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <h2>Contact</h2>
+  <input type="text" placeholder="Tên">
+  <input type="email" placeholder="Email">
+  <textarea placeholder="Tin nhắn"></textarea>
+  <button>Send</button>
 </section>
 
 <footer>
- © 2026 Portfolio — Designed with care
+  © 2026 Huỳnh Công Duy
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
