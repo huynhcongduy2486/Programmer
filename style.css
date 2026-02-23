@@ -74,23 +74,13 @@ section{
     position: relative;
     z-index: 1;
 }
-.avatar-container{
-  margin-bottom:40px;
-}
-
-.avatar{
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  object-fit:cover;
-  border:5px solid #0ea5e9;
-  box-shadow:0 0 40px #0ea5e9;
-  transition:0.4s;
-}
-
-.avatar:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 70px #38bdf8;
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #00c6ff;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 .subtitle{
   color:#94a3b8;
