@@ -7,7 +7,7 @@ Passionate about AI technology and holistic wellness.
 ## 🌐 Live Website
 👉 https://huynhcongduy2486.github.io/Cong_Duy_portfolio/
 
-## 🚀 About Me
+## ✨About Me
 - 💡 Interested in Artificial Intelligence
 - 🤖 Machine Learning & Deep Learning
 - 🌱 Continuous self-improvement
