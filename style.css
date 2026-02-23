@@ -93,6 +93,20 @@ section{
   box-shadow:0 0 70px #38bdf8;
 }
 
+.assets-wrapper::after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  border:2px solid rgba(56,189,248,0.5);
+  animation:rotate 8s linear infinite;
+}
+
+@keyframes rotate{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
 .subtitle{
   color:#94a3b8;
   margin:15px 0 25px;
