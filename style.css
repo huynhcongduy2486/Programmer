@@ -99,11 +99,15 @@ section{
   box-shadow:0 0 70px #38bdf8;
 }
 
-/* Xoay nền */
-@keyframes rotate{
-  from{transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
+.hero{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    text-align:center;
 }
+
+.hero h1{
+    font-size:60px;
+}
+
 .subtitle{
   color:#94a3b8;
   margin:15px 0 25px;
