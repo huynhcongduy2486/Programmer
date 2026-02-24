@@ -65,29 +65,7 @@ section{
 
   background-size:cover;
 }
-.lang-switch{
-  position:absolute;
-  top:20px;
-  left:20px;
-  display:flex;
-  gap:10px;
-}
 
-.lang-switch button{
-  padding:8px 20px;
-  border:none;
-  border-radius:25px;
-  font-weight:600;
-  cursor:pointer;
-  background:#e2e8f0;
-  color:#1e293b;
-  transition:0.3s;
-}
-
-.lang-switch button.active{
-  background:linear-gradient(90deg,#6366f1,#8b5cf6);
-  color:white;
-}
 /* ===== AVATAR ===== */
 .avatar-container{
   margin-bottom:40px;
