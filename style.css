@@ -25,7 +25,18 @@ nav{
   padding:15px 60px;
   z-index:1000;
 }
-
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:transparent;   /* đổi chỗ này */
+  backdrop-filter:none;     /* nếu có blur thì bỏ */
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  z-index:1000;
+}
 .logo{
   font-weight:800;
   font-size:22px;
