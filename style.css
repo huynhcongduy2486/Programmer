@@ -326,33 +326,44 @@ section{
   background:linear-gradient(90deg,#0ea5e9,#38bdf8);
 }
 
-/* Reset */
-html, body{
-    margin:0;
-    padding:0;
-    height:100%;
+/* ===== CONTACT ===== */
+#contact input,
+#contact textarea{
+  width:320px;
+  padding:12px;
+  margin:12px 0;
+  border:none;
+  border-radius:12px;
+  background:#1e293b;
+  color:white;
 }
 
-/* Cho body full chiều cao */
-body{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
+#contact textarea{
+  height:120px;
+  resize:none;
 }
 
-/* Section chiếm không gian còn lại */
-section{
-    flex-shrink:0;
+#contact button{
+  padding:12px 35px;
+  border:none;
+  border-radius:30px;
+  background:#0ea5e9;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-/* Footer dính đáy */
+#contact button:hover{
+  background:#38bdf8;
+}
+
+/* ===== FOOTER ===== */
 footer{
-    margin-top:auto;
-    width:100%;
-    padding:40px 20px;
-    text-align:center;
-    color:white;
-
-    /* MÀU GIỐNG NÚT SEND */
-    background: linear-gradient(135deg, #1e3a8a, #0ea5e9);
+  margin-top:80px;
+  padding:40px 20px;
+  text-align:center;
+  background:#1e293b;
+  color:#94a3b8;
+  font-size:14px;
 }
