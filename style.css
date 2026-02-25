@@ -202,11 +202,19 @@ section{
 .nonprofit-content p{
     color:#cbd5e1;
 }
+@media (max-width:768px){
 
-@media(max-width:768px){
-    .nonprofit-link{
-        flex-direction:column;
+    .nonprofit-card{
+        flex-direction:column;   /* 👈 xếp dọc */
+        text-align:center;       /* 👈 căn giữa text */
+        padding:30px 20px;
     }
+
+    .nonprofit-card img{
+        margin:0 auto 20px auto; /* 👈 ảnh nằm giữa */
+        display:block;
+    }
+
 }
 /* ===== CARD ===== */
 .card{
