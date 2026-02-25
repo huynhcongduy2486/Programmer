@@ -158,27 +158,55 @@ section{
   line-height:1.9;
   color:#cbd5e1;
 }
+.nonprofit-section{
+    padding:80px 20px;
+}
+
 .nonprofit-card{
-  display:flex;
-  align-items:flex-start;
-  gap:15px;
-  background:#1e293b;
-  padding:25px;
-  border-radius:20px;
-  margin-bottom:30px;
-  transition:0.3s;
+    background:#1e293b;
+    padding:30px;
+    margin:30px auto;
+    border-radius:20px;
+    max-width:1000px;
+    transition:0.3s;
 }
 
 .nonprofit-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 25px #0ea5e9;
+    transform:translateY(-8px);
+    box-shadow:0 0 25px #0ea5e9;
+}
+
+.nonprofit-link{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    text-decoration:none;
 }
 
 .nonprofit-card img{
-  width:70px;
-  height:70px;
-  object-fit:cover;
-  border-radius:12px;
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+.nonprofit-content h4{
+    color:#38bdf8;
+    margin-bottom:8px;
+}
+
+.nonprofit-org{
+    color:#94a3b8;
+    margin-bottom:10px;
+}
+
+.nonprofit-content p{
+    color:#cbd5e1;
+}
+
+@media(max-width:768px){
+    .nonprofit-link{
+        flex-direction:column;
+    }
 }
 /* ===== CARD ===== */
 .card{
