@@ -357,99 +357,95 @@ section{
 #contact button:hover{
   background:#38bdf8;
 }
-/* ===== FIX CÂN ĐỐI CONTACT FULL ===== */
-/* ===== CONTACT SECTION FIX CHUẨN ===== */
-
-#contact{
-  padding:80px 20px;
-  text-align:center;
-}
+/* ===== CONTACT CARD FIX FULL ===== */
 
 .contact-wrapper{
-  width:100%;
-  max-width:900px;
-  margin:0 auto;
+  max-width:700px;
+  margin:60px auto;
+  padding:0 20px;
 }
 
-/* CARD */
 .contact-card{
   display:flex;
   align-items:center;
-  gap:25px;
-  background:#18263a;
-  padding:30px;
-  border-radius:20px;
+  gap:20px;
+
+  background:#1c2a3f;
+  padding:25px 30px;
+  border-radius:22px;
   margin-bottom:30px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.4);
-  text-align:left;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  transition:0.3s ease;
 }
 
-/* ICON BOX */
+.contact-card:hover{
+  transform:translateY(-5px);
+}
+
 .contact-icon{
   min-width:70px;
   height:70px;
+  border-radius:18px;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:20px;
-  background:linear-gradient(135deg,#6c63ff,#00c6ff);
-  font-size:26px;
+
+  font-size:28px;
   color:white;
+
+  background:linear-gradient(135deg,#667eea,#2db4e3);
 }
 
-/* TEXT */
+.contact-info{
+  flex:1;
+  min-width:0;
+}
+
 .contact-info h3{
+  margin:0;
   font-size:22px;
-  margin-bottom:6px;
+  font-weight:600;
+  color:white;
 }
 
 .contact-info p{
-  margin:4px 0;
-  opacity:0.8;
+  margin:6px 0;
+  color:#bfc7d5;
+  font-size:15px;
+
+  word-break:break-word;
 }
 
 .contact-info a{
-  color:#8fa0ff;
-  text-decoration:none;
+  font-size:15px;
   font-weight:500;
-}
-
-/* ===== FOLLOW BUTTONS ===== */
-
-.follow-wrapper{
-  max-width:600px;
-  margin:50px auto 0 auto;
-}
-
-.follow-btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  background:#18263a;
-  padding:16px;
-  border-radius:40px;
-  margin-bottom:18px;
+  color:#7f8cff;
   text-decoration:none;
-  color:white;
-  transition:0.3s;
 }
 
-.follow-btn:hover{
-  background:linear-gradient(135deg,#6c63ff,#00c6ff);
+.contact-info a:hover{
+  text-decoration:underline;
 }
 
 /* ===== RESPONSIVE ===== */
 
-@media(max-width:768px){
+@media (max-width:600px){
 
   .contact-card{
-    flex-direction:row;
-    padding:22px;
+    padding:20px;
+    gap:15px;
   }
 
-  .contact-wrapper{
-    max-width:95%;
+  .contact-icon{
+    min-width:60px;
+    height:60px;
+    font-size:22px;
+  }
+
+  .contact-info h3{
+    font-size:18px;
   }
 
 }
