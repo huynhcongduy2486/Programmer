@@ -54,7 +54,48 @@ nav a{
 nav a:hover{
   color:#38bdf8;
 }
+/* Nút 3 gạch */
+.menu-toggle{
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+    color:white;
+}
 
+/* Menu ngang desktop */
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+/* ===== Mobile ===== */
+@media (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        text-align:center;
+        display:none;
+        padding:20px 0;
+    }
+
+    .nav-links li{
+        margin:15px 0;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+}
 /* ===== SECTION ===== */
 section{
   padding:120px 20px;
