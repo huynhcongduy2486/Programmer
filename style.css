@@ -358,59 +358,98 @@ section{
   background:#38bdf8;
 }
 /* ===== FIX CÂN ĐỐI CONTACT FULL ===== */
+/* ===== CONTACT SECTION FIX CHUẨN ===== */
+
+#contact{
+  padding:80px 20px;
+  text-align:center;
+}
 
 .contact-wrapper{
   width:100%;
   max-width:900px;
-  margin:80px auto;
-  padding:0 20px;
+  margin:0 auto;
 }
 
+/* CARD */
 .contact-card{
-  width:100%;
-  max-width:750px;
-  margin:0 auto 35px auto;
-
   display:flex;
   align-items:center;
   gap:25px;
-
-  padding:28px 30px;
-  border-radius:22px;
+  background:#18263a;
+  padding:30px;
+  border-radius:20px;
+  margin-bottom:30px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+  text-align:left;
 }
 
-/* Đảm bảo icon không bị co */
+/* ICON BOX */
 .contact-icon{
-  flex-shrink:0;
+  min-width:70px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:20px;
+  background:linear-gradient(135deg,#6c63ff,#00c6ff);
+  font-size:26px;
+  color:white;
 }
 
-/* Đảm bảo text không làm vỡ layout */
-.contact-content{
-  flex:1;
-  min-width:0;
+/* TEXT */
+.contact-info h3{
+  font-size:22px;
+  margin-bottom:6px;
 }
 
-/* ===== DESKTOP CĂN ĐỀU HƠN ===== */
+.contact-info p{
+  margin:4px 0;
+  opacity:0.8;
+}
 
-@media (min-width: 1024px){
+.contact-info a{
+  color:#8fa0ff;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* ===== FOLLOW BUTTONS ===== */
+
+.follow-wrapper{
+  max-width:600px;
+  margin:50px auto 0 auto;
+}
+
+.follow-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  background:#18263a;
+  padding:16px;
+  border-radius:40px;
+  margin-bottom:18px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+.follow-btn:hover{
+  background:linear-gradient(135deg,#6c63ff,#00c6ff);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:768px){
+
+  .contact-card{
+    flex-direction:row;
+    padding:22px;
+  }
 
   .contact-wrapper{
-    max-width:1000px;
-  }
-
-  .contact-card{
-    max-width:800px;
-  }
-
-}
-
-/* ===== MOBILE CHUẨN ===== */
-
-@media (max-width:600px){
-
-  .contact-card{
-    padding:22px;
-    gap:18px;
+    max-width:95%;
   }
 
 }
