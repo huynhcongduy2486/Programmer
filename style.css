@@ -326,25 +326,33 @@ section{
   background:linear-gradient(90deg,#0ea5e9,#38bdf8);
 }
 
-/* Xóa margin mặc định */
+/* Reset */
 html, body{
     margin:0;
     padding:0;
+    height:100%;
 }
 
-/* Cho body full chiều cao màn hình */
+/* Cho body full chiều cao */
 body{
     min-height:100vh;
     display:flex;
     flex-direction:column;
 }
 
-/* Đẩy footer xuống đáy */
+/* Section chiếm không gian còn lại */
+section{
+    flex-shrink:0;
+}
+
+/* Footer dính đáy */
 footer{
     margin-top:auto;
-    background:#1e293b;
+    width:100%;
     padding:40px 20px;
     text-align:center;
-    color:#cbd5e1;
-    width:100%;
+    color:white;
+
+    /* MÀU GIỐNG NÚT SEND */
+    background: linear-gradient(135deg, #1e3a8a, #0ea5e9);
 }
