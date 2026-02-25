@@ -357,30 +357,46 @@ section{
 #contact button:hover{
   background:#38bdf8;
 }
-/* ===== moi ===== */
-.contact-section{
-  background:#f8fafc;
-  padding:60px 20px;
+/* ===== CONTACT DARK FULL FIX ===== */
+
+body{
+  margin:0;
+  background:#0f172a;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Section nền full đen */
+.contact-section{
+  background:#0f172a;
+  padding:80px 20px;
+}
+
+/* Container nằm giữa */
 .contact-container{
+  max-width:600px;
+  margin:0 auto;
   display:flex;
   flex-direction:column;
-  gap:25px;
-  max-width:600px;
-  margin:auto;
+  gap:30px;
 }
 
+/* Card */
 .contact-card{
-  background:white;
-  padding:25px;
+  background:#1e293b;
+  padding:30px;
   border-radius:25px;
   display:flex;
   gap:20px;
   align-items:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  transition:0.3s;
 }
 
+.contact-card:hover{
+  transform:translateY(-5px);
+}
+
+/* Icon */
 .icon-box{
   width:70px;
   height:70px;
@@ -393,31 +409,38 @@ section{
   background:linear-gradient(135deg,#6366f1,#0ea5e9);
 }
 
+/* Text */
 .contact-info h3{
   margin:0;
-  font-size:20px;
-  color:#111827;
+  font-size:22px;
+  color:white;
 }
 
 .contact-info p{
   margin:5px 0;
-  color:#6b7280;
+  color:#cbd5e1;
 }
 
 .contact-info a{
-  color:#6366f1;
+  color:#818cf8;
   text-decoration:none;
   font-weight:600;
 }
 
+.contact-info a:hover{
+  color:#38bdf8;
+}
+
+/* Follow */
 .follow-title{
-  margin-top:60px;
-  text-align:left;
+  margin-top:70px;
   max-width:600px;
   margin-left:auto;
   margin-right:auto;
+  color:white;
 }
 
+/* Social buttons */
 .social-container{
   display:flex;
   flex-direction:column;
@@ -429,18 +452,18 @@ section{
 .social-btn{
   padding:18px;
   border-radius:50px;
-  background:white;
+  background:#1e293b;
   text-decoration:none;
-  color:#111827;
+  color:white;
   font-weight:600;
   text-align:center;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
   transition:0.3s;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 .social-btn:hover{
+  background:#334155;
   transform:translateY(-3px);
-  background:#eef2ff;
 }
 /* ===== FOOTER ===== */
 footer{
