@@ -158,61 +158,49 @@ section{
   line-height:1.9;
   color:#cbd5e1;
 }
-.nonprofit-section{
-    padding:80px 20px;
-}
-
 .nonprofit-card{
+    display:flex;
+    align-items:center;
+    gap:25px;
     background:#1e293b;
-    padding:30px;
+    padding:30px 40px;
     margin:30px auto;
     border-radius:20px;
-    max-width:1000px;
-    transition:0.3s;
-}
-
-.nonprofit-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 25px #0ea5e9;
+    max-width:900px;
 }
 
 .nonprofit-link{
     display:flex;
-    align-items:flex-start;
-    gap:20px;
+    align-items:center;
+    gap:25px;
     text-decoration:none;
+    width:100%;
 }
 
+/* ảnh desktop */
 .nonprofit-card img{
-    width:80px;
-    height:80px;
+    width:100px;
+    height:100px;
     object-fit:contain;
 }
 
-.nonprofit-content h4{
-    color:#38bdf8;
-    margin-bottom:8px;
-}
-
-.nonprofit-org{
-    color:#94a3b8;
-    margin-bottom:10px;
-}
-
-.nonprofit-content p{
-    color:#cbd5e1;
-}
+/* ===== MOBILE FIX ===== */
 @media (max-width:768px){
 
     .nonprofit-card{
-        flex-direction:column;   /* 👈 xếp dọc */
-        text-align:center;       /* 👈 căn giữa text */
-        padding:30px 20px;
+        flex-direction:column;
+        text-align:center;
+        padding:25px 20px;
+    }
+
+    .nonprofit-link{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
     }
 
     .nonprofit-card img{
-        margin:0 auto 20px auto; /* 👈 ảnh nằm giữa */
-        display:block;
+        margin:0 auto 15px auto;
     }
 
 }
