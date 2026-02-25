@@ -204,6 +204,21 @@ section{
     }
 
 }
+/* Tiêu đề project màu xanh */
+.nonprofit-card h4{
+    color: #38bdf8;   /* xanh đẹp */
+    font-weight: 600;
+}
+
+/* Tên tổ chức màu trắng */
+.nonprofit-org{
+    color: #ffffff;
+}
+
+/* Nội dung mô tả màu trắng */
+.nonprofit-card p{
+    color: #ffffff;
+}
 /* ===== CARD ===== */
 .card{
   background:#1e293b;
