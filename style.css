@@ -326,44 +326,25 @@ section{
   background:linear-gradient(90deg,#0ea5e9,#38bdf8);
 }
 
-/* ===== CONTACT ===== */
-#contact input,
-#contact textarea{
-  width:320px;
-  padding:12px;
-  margin:12px 0;
-  border:none;
-  border-radius:12px;
-  background:#1e293b;
-  color:white;
+/* Xóa margin mặc định */
+html, body{
+    margin:0;
+    padding:0;
 }
 
-#contact textarea{
-  height:120px;
-  resize:none;
+/* Cho body full chiều cao màn hình */
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
-#contact button{
-  padding:12px 35px;
-  border:none;
-  border-radius:30px;
-  background:#0ea5e9;
-  color:white;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-#contact button:hover{
-  background:#38bdf8;
-}
-
-/* ===== FOOTER ===== */
+/* Đẩy footer xuống đáy */
 footer{
-  margin-top:80px;
-  padding:40px 20px;
-  text-align:center;
-  background:#1e293b;
-  color:#94a3b8;
-  font-size:14px;
+    margin-top:auto;
+    background:#1e293b;
+    padding:40px 20px;
+    text-align:center;
+    color:#cbd5e1;
+    width:100%;
 }
