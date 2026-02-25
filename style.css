@@ -357,105 +357,60 @@ section{
 #contact button:hover{
   background:#38bdf8;
 }
-/* ===== CONTACT SECTION FULL RESPONSIVE ===== */
+/* ===== FIX CÂN ĐỐI CONTACT FULL ===== */
 
 .contact-wrapper{
-  max-width:800px;
+  width:100%;
+  max-width:900px;
   margin:80px auto;
   padding:0 20px;
 }
 
 .contact-card{
+  width:100%;
+  max-width:750px;
+  margin:0 auto 35px auto;
+
   display:flex;
   align-items:center;
   gap:25px;
 
-  background:#1c2a3f;
-  padding:30px;
-  border-radius:24px;
-  margin-bottom:35px;
-
-  box-shadow:0 15px 40px rgba(0,0,0,0.45);
-  transition:0.3s ease;
+  padding:28px 30px;
+  border-radius:22px;
 }
 
-.contact-card:hover{
-  transform:translateY(-6px);
-}
-
-/* ICON XANH */
+/* Đảm bảo icon không bị co */
 .contact-icon{
-  width:75px;
-  height:75px;
-  min-width:75px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:20px;
-
-  background:linear-gradient(135deg,#667eea,#2db4e3);
-  box-shadow:0 10px 30px rgba(45,180,227,0.4);
-
-  font-size:28px;
-  color:white;
+  flex-shrink:0;
 }
 
-/* TEXT */
+/* Đảm bảo text không làm vỡ layout */
 .contact-content{
   flex:1;
   min-width:0;
 }
 
-.contact-content h3{
-  margin:0;
-  font-size:22px;
-  font-weight:600;
-  color:white;
+/* ===== DESKTOP CĂN ĐỀU HƠN ===== */
+
+@media (min-width: 1024px){
+
+  .contact-wrapper{
+    max-width:1000px;
+  }
+
+  .contact-card{
+    max-width:800px;
+  }
+
 }
 
-.contact-content p{
-  margin:6px 0;
-  font-size:16px;
-  color:#c6cfdd;
-  word-break:break-word;
-}
-
-.contact-content a{
-  font-size:15px;
-  color:#8ea2ff;
-  text-decoration:none;
-  font-weight:500;
-}
-
-.contact-content a:hover{
-  text-decoration:underline;
-}
-
-/* ===== MOBILE FIX ===== */
+/* ===== MOBILE CHUẨN ===== */
 
 @media (max-width:600px){
 
   .contact-card{
-    flex-direction:row;
     padding:22px;
     gap:18px;
-  }
-
-  .contact-icon{
-    width:60px;
-    height:60px;
-    min-width:60px;
-    font-size:22px;
-  }
-
-  .contact-content h3{
-    font-size:18px;
-  }
-
-  .contact-content p{
-    font-size:14px;
   }
 
 }
