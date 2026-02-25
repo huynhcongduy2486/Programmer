@@ -357,7 +357,50 @@ section{
 #contact button:hover{
   background:#38bdf8;
 }
+.contact-container{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+  margin-top:40px;
+}
 
+.contact-card{
+  background:#f1f5f9;
+  padding:25px;
+  border-radius:20px;
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+.contact-icon{
+  width:70px;
+  height:70px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  color:white;
+  background:linear-gradient(135deg,#4f46e5,#0ea5e9);
+}
+
+.social-container{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-top:20px;
+}
+
+.social-btn{
+  padding:15px;
+  border-radius:50px;
+  background:#f1f5f9;
+  text-decoration:none;
+  color:#111;
+  font-weight:600;
+  text-align:center;
+}
 /* ===== FOOTER ===== */
 footer{
   margin-top:80px;
