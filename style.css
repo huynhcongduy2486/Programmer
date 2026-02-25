@@ -357,43 +357,76 @@ section{
 #contact button:hover{
   background:#38bdf8;
 }
-/* ===== CONTACT DARK FULL FIX ===== */
+/* ===== CONTACT MINI CLEAN VERSION ===== */
 
-body{
-  margin:0;
-  background:#0f172a;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Section nền full đen */
 .contact-section{
   background:#0f172a;
-  padding:80px 20px;
+  padding:60px 16px;
 }
 
-/* Container nằm giữa */
 .contact-container{
-  max-width:600px;
+  max-width:500px;
   margin:0 auto;
   display:flex;
   flex-direction:column;
-  gap:30px;
+  gap:20px;
 }
 
 /* Card */
 .contact-card{
   background:#1e293b;
-  padding:30px;
-  border-radius:25px;
+  padding:20px;
+  border-radius:20px;
   display:flex;
-  gap:20px;
+  gap:15px;
   align-items:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
-  transition:0.3s;
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  overflow:hidden;
 }
 
-.contact-card:hover{
-  transform:translateY(-5px);
+/* Icon */
+.icon-box{
+  width:55px;
+  height:55px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  color:white;
+  background:linear-gradient(135deg,#6366f1,#0ea5e9);
+  flex-shrink:0;
+}
+
+/* Text */
+.contact-info{
+  flex:1;
+  min-width:0;
+}
+
+.contact-info h3{
+  margin:0;
+  font-size:18px;
+  color:white;
+}
+
+.contact-info p{
+  margin:4px 0;
+  font-size:14px;
+  color:#cbd5e1;
+  word-break:break-word;
+  overflow-wrap:break-word;
+}
+
+.contact-info a{
+  font-size:14px;
+  color:#818cf8;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.contact-info a:hover{
+  color:#38bdf8;
 }
 
 /* Icon */
@@ -407,28 +440,6 @@ body{
   font-size:24px;
   color:white;
   background:linear-gradient(135deg,#6366f1,#0ea5e9);
-}
-
-/* Text */
-.contact-info h3{
-  margin:0;
-  font-size:22px;
-  color:white;
-}
-
-.contact-info p{
-  margin:5px 0;
-  color:#cbd5e1;
-}
-
-.contact-info a{
-  color:#818cf8;
-  text-decoration:none;
-  font-weight:600;
-}
-
-.contact-info a:hover{
-  color:#38bdf8;
 }
 
 /* Follow */
