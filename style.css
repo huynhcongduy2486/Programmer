@@ -54,19 +54,45 @@ nav a{
 nav a:hover{
   color:#38bdf8;
 }
-/* Nút 3 gạch */
-.menu-toggle{
-    font-size:28px;
-    cursor:pointer;
-    display:none;
-    color:white;
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    position:relative;
 }
 
-/* Menu ngang desktop */
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#38bdf8;
+}
+
 .nav-links{
     display:flex;
-    gap:30px;
     list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+}
+
+/* ===== Hamburger ===== */
+.menu-toggle{
+    width:30px;
+    cursor:pointer;
+    display:none;
+}
+
+.menu-toggle span{
+    display:block;
+    height:3px;
+    background:white;
+    margin:6px 0;
+    border-radius:3px;
 }
 
 /* ===== Mobile ===== */
@@ -90,6 +116,10 @@ nav a:hover{
 
     .nav-links li{
         margin:15px 0;
+    }
+
+    .nav-links a{
+        color:black;
     }
 
     .nav-links.active{
