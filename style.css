@@ -326,76 +326,96 @@ section{
   background:linear-gradient(90deg,#0ea5e9,#38bdf8);
 }
 .projects {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
 }
 
-.project-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 40px;
+.section-title {
+  font-size: 32px;
+  margin-bottom: 60px;
+  color: white;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .project-card {
-  background: #1f2a44;
-  padding: 30px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 20px;
-  width: 320px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-  transition: 0.3s;
+  padding: 40px 25px;
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
+  border: 1px solid #00c6ff;
+}
+
+.project-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
 .project-card h3 {
+  color: white;
   margin-bottom: 15px;
-  color: #ffffff;
 }
 
 .project-card p {
-  font-size: 14px;
   color: #cbd5e1;
+  font-size: 14px;
   margin-bottom: 20px;
 }
 
 .tech {
   font-size: 12px;
   color: #00c6ff;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-.project-buttons {
+.buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.btn {
-  padding: 10px 20px;
-  border-radius: 25px;
+.btn-primary,
+.btn-secondary {
+  padding: 10px 22px;
+  border-radius: 30px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
   transition: 0.3s;
 }
 
-.demo {
+.btn-primary {
   background: linear-gradient(90deg,#4f6df5,#00c6ff);
   color: white;
 }
 
-.github {
-  background: #415a77;
+.btn-secondary {
+  border: 1px solid #00c6ff;
+  color: #00c6ff;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.btn-secondary:hover {
+  background: #00c6ff;
   color: white;
 }
-
-.btn:hover {
-  opacity: 0.8;
-}
-
 /* ===== CONTACT FULL FIX ===== */
 
 .contact-section {
