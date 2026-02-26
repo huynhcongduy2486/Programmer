@@ -217,16 +217,24 @@ Tôi tin rằng thành công đến từ sự kiên trì, tò mò và không ng�
 
 </section>
 
-</section>
-<section id="contact">
-  <h2>Contact</h2>
-  <input type="text" placeholder="Tên">
-  <input type="email" placeholder="Email">
-  <input type="tin nhắn" placeholder="Tin Nhắn">
-  <button>Send</button>
 <section id="contact" class="contact-section">
 
-  <div class="contact-container">
+  <h2>Contact</h2>
+
+  <form action="https://formspree.io/f/xvzblqyl" method="POST" class="contact-form">
+
+    <div class="form-row">
+      <input type="text" name="name" placeholder="Tên" required>
+      <input type="email" name="email" placeholder="Email" required>
+    </div>
+
+    <textarea name="message" placeholder="Tin nhắn của bạn..." required></textarea>
+
+    <button type="submit">Send Message</button>
+
+  </form>
+
+</section>
 
 <!-- Email -->
     <div class="contact-card">
