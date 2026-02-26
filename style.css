@@ -399,7 +399,7 @@ section{
 }
 
 .btn-primary {
-  background: linear-gradient(90deg,#4f6df5,#00c6ff);
+  background: none;
   color: white;
 }
 
