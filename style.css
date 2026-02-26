@@ -327,11 +327,8 @@ section{
 }
 /* ===== PROJECT SECTION ===== */
 
-
-
 .projects {
   padding: 100px 20px;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
   text-align: center;
 }
 
