@@ -350,7 +350,7 @@ section{
 
 /* Card */
 .project-card {
-  background: rgba(255,255,255,0.05);
+  background: none;
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 40px 25px;
