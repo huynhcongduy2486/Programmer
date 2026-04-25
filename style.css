@@ -608,6 +608,42 @@ section{
   background:#334155;
   transform:translateY(-3px);
 }
+/* ===== Chuyển khoản ===== */
+.donation-container {
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.qr-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.qr-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 200px;
+}
+
+.qr-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.qr-card h4 {
+    margin-bottom: 10px;
+    color: #333;
+}
 /* ===== FOOTER ===== */
 footer{
   margin-top:80px;
