@@ -5,7 +5,7 @@ Machine Learning Engineer
 Passionate about AI technology and holistic wellness.
 
 ## 🌐 Live Website
-👉 https://huynhcongduy2486.github.io/Cong_Duy_portfolio/
+👉https://huynhcongduy2486.github.io/Programmer/
 
 ## ✨About Me
 - 💡 Interested in Artificial Intelligence
