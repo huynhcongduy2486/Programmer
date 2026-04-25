@@ -16,9 +16,14 @@ sections.forEach(sec=>{
   sec.style.transition="all 0.8s ease";
 });
 ---Chuyen khoan---
-function startTimer(duration, display) {
-    let timer = duration, minutes, seconds;
-    let countdown = setInterval(function () {
+function startDonationTimer() {
+    const display = document.querySelector('#timer');
+    if (!display) return; // Nếu không tìm thấy id timer thì bỏ qua
+
+    let timer = 15 * 60; // 15 phút
+    let minutes, seconds;
+
+    const countdown = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -31,19 +36,22 @@ function startTimer(duration, display) {
             clearInterval(countdown);
             display.textContent = "ĐÃ HẾT HẠN";
             
-            // Khóa tất cả các link không cho bấm vào nữa
-            const links = document.querySelectorAll('.qr-link');
-            links.forEach(link => {
-                link.style.pointerEvents = "none"; // Không cho click
-                link.style.opacity = "0.2";       // Làm mờ hẳn đi
+            // Khóa tất cả các link ngân hàng
+            const qrLinks = document.querySelectorAll('.qr-link');
+            qrLinks.forEach(link => {
+                link.style.pointerEvents = "none"; // Khóa click
+                link.style.opacity = "0.4";        // Làm mờ thẻ
+                // Đổi chữ "Bấm để thanh toán" thành thông báo
+                link.querySelector('p').textContent = "Phiên đã hết hạn";
+                link.querySelector('p').style.color = "#ff4d4d";
             });
-            alert("Phiên thanh toán đã hết hạn, vui lòng tải lại trang!");
+
+            alert("Phiên thanh toán đã hết hạn, vui lòng tải lại trang nếu bạn muốn tiếp tục!");
         }
     }, 1000);
 }
 
-window.onload = function () {
-    const fifteenMinutes = 60 * 15,
-    display = document.querySelector('#timer');
-    startTimer(fifteenMinutes, display);
-};
+// Chạy bộ đếm khi web vừa load xong
+document.addEventListener("DOMContentLoaded", function() {
+    startDonationTimer();
+});
