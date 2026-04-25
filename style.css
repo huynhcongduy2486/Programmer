@@ -609,15 +609,44 @@ section{
   transform:translateY(-3px);
 }
 /* ===== Chuyển khoản ===== */
+.qr-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.qr-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .qr-card {
-    text-decoration: none; /* Bỏ gạch chân link */
-    color: inherit;       /* Giữ màu chữ cũ */
-    display: block;       /* Đảm bảo thẻ a bao trọn nội dung */
-    transition: transform 0.3s ease;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
 }
 
 .qr-card:hover {
-    transform: translateY(-5px); /* Hiệu ứng nổi lên khi di chuột vào */
+    transform: scale(1.05);
+    background: #f0f0f0;
+}
+
+.qr-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+#timer {
+    color: #ff4d4d;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 /* ===== FOOTER ===== */
 footer{
