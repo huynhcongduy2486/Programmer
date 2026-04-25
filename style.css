@@ -609,44 +609,71 @@ section{
   transform:translateY(-3px);
 }
 /* ===== Chuyển khoản ===== */
+/* --- DONATION SECTION --- */
+.donation-section {
+    padding: 40px 20px;
+}
+
+.donation-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .qr-grid {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
-    margin-top: 20px;
 }
 
 .qr-link {
     text-decoration: none;
-    color: inherit;
+    display: block;
+    transition: opacity 0.3s ease;
 }
 
 .qr-card {
-    background: white;
-    padding: 15px;
-    border-radius: 15px;
-    width: 200px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    width: 220px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .qr-card:hover {
-    transform: scale(1.05);
-    background: #f0f0f0;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.qr-card h4 {
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .qr-card img {
     width: 100%;
-    border-radius: 10px;
-    margin: 10px 0;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #eaeaea;
+}
+
+.qr-card p {
+    color: #007bff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 #timer {
     color: #ff4d4d;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
 }
 /* ===== FOOTER ===== */
 footer{
