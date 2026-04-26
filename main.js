@@ -92,60 +92,85 @@ window.onload = function() {
 </script>
 ------
 <script>
+
 let currentBank = "";
 let currentAcc = "";
 
-// Gọi khi mở QR
+// Khi bạn mở popup QR thì gọi hàm này
 function showQR(bankName, acc, owner, bankFull, qrFile) {
 
-  currentBank = bankName;
-  currentAcc = acc;
+    currentBank = bankName;
+    currentAcc = acc;
 
-  // code cũ của bạn giữ nguyên
+    // ... Giữ nguyên phần code cũ của bạn
 }
 
 
-// COPY STK
+// Copy số tài khoản
 function copyAccount() {
-  navigator.clipboard.writeText(currentAcc);
-  alert("Đã copy số tài khoản: " + currentAcc);
+    navigator.clipboard.writeText(currentAcc);
+    alert("Đã copy số tài khoản: " + currentAcc);
 }
 
 
-// 🚀 CHUYỂN KHOẢN (VietQR AUTO)
+
+// 🚀 NÚT CHUYỂN KHOẢN — TỰ ĐỘNG MỞ APP NGÂN HÀNG
 function transfer() {
 
-  let bankCode = "";
+    if (!currentBank || !currentAcc) {
+        alert("Chưa có thông tin để chuyển khoản!");
+        return;
+    }
 
-  if (currentBank.includes("MB")) bankCode = "MB";
-  else if (currentBank.includes("Vietcombank")) bankCode = "VCB";
-  else if (currentBank.includes("BIDV")) bankCode = "BIDV";
-  else if (currentBank.includes("MoMo")) bankCode = "MOMO";
+    // Chuẩn hóa bankCode
+    let bankCode = "";
 
-  if (!bankCode) {
-    alert("Không xác định ngân hàng!");
-    return;
-  }
-document.getElementById("openBankBtn").onclick = function () {
+    if (currentBank.includes("MB")) bankCode = "MB";
+    else if (currentBank.includes("Vietcombank") || currentBank.includes("VCB")) bankCode = "VCB";
+    else if (currentBank.includes("BIDV")) bankCode = "BIDV";
+    else if (currentBank.includes("MoMo") || currentBank.includes("MOMO")) bankCode = "MOMO";
 
-  let url = "";
+    if (!bankCode) {
+        alert("Không xác định ngân hàng!");
+        return;
+    }
 
-  if (currentBank === "MB") {
-    url = "https://img.vietqr.io/image/MB-0704514772-compact.png?addInfo=TANGHCD";
-  }
-  else if (currentBank === "VCB") {
-    url = "https://img.vietqr.io/image/VCB-1053201984-compact.png?addInfo=TANGHCD";
-  }
-  else if (currentBank === "BIDV") {
-    url = "https://img.vietqr.io/image/BIDV-6612909907-compact.png?addInfo=TANGHCD";
-  }
-  else if (currentBank === "MOMO") {
-    url = "https://nhantien.momo.vn/0704514772";
-  }
+    // Tạo link mở app BANKING
+    let deepLink = "";
 
-  // Mở tab mới (QUAN TRỌNG)
-  window.open(url, "_blank");
+    switch (bankCode) {
 
-};
+        case "MB":
+            // MB Bank mở trực tiếp app
+            deepLink = "mbbank://";
+            break;
+
+        case "VCB":
+            deepLink = "vcb://";
+            break;
+
+        case "BIDV":
+            deepLink = "bidv://";
+            break;
+
+        case "MOMO":
+            deepLink = `momo://app?action=pay&phone=${currentAcc}`;
+            break;
+    }
+
+
+    // Link dự phòng VietQR (nếu app không bật)
+    let qrURL = `https://img.vietqr.io/image/${bankCode}-${currentAcc}-compact.png?addInfo=CHUYEN+TIEN`;
+
+
+
+    // 🚀 QUAN TRỌNG: cố mở APP trước
+    window.location.href = deepLink;
+
+    // ⏳ 0.8s sau nếu app không bật → mở VietQR
+    setTimeout(() => {
+        window.open(qrURL, "_blank");
+    }, 800);
 }
+
 </script>
