@@ -342,38 +342,40 @@ Tôi tin rằng thành công đến từ sự kiên trì, tò mò và không ng�
 
   </div>
 <!-- Thanh Toán -->
-<section class="support-section">
-    <h2 class="follow-title">Support Me</h2>
-    <div class="donation-container">
-        <p style="text-align: center; color: #fff;">
-            Phiên thanh toán hết hạn sau: <span id="timer" style="color: #ff4d4d; font-weight: bold; font-size: 1.2rem;">15:00</span>
-        </p>
-
-        <div class="qr-grid">
-            <a href="https://vietqr.net/p/0704514772" target="_blank" class="qr-link">
-                <div class="qr-card">
-                    <div class="bank-info">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Logo_MB_new.png" alt="MB Logo">
-                        <h4>MB Bank</h4>
-                    </div>
-                    <img src="https://img.vietqr.io/image/mbbank-0704514772-compact.jpg" class="qr-img">
-                    <p class="btn-text">Bấm để thanh toán</p>
-                </div>
-            </a>
-
-            <a href="https://vietqr.net/p/1053201984" target="_blank" class="qr-link">
-                <div class="qr-card">
-                    <div class="bank-info">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Vietcombank_logo.png" alt="VCB Logo">
-                        <h4>VCB</h4>
-                    </div>
-                    <img src="https://img.vietqr.io/image/vcb-1053201984-compact.jpg" class="qr-img">
-                    <p class="btn-text">Bấm để thanh toán</p>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
+const BANKS = {
+  mbbank: {
+    name: 'MB Bank',
+    fullName: 'Ngân hàng Quân đội',
+    acc: '0704514772',
+    owner: 'HUYNH CONG DUY',
+    qr: 'https://img.vietqr.io/image/mbbank-0704514772-compact.jpg',
+    link: 'https://vietqr.net/p/0704514772'
+  },
+  vcb: {
+    name: 'Vietcombank',
+    fullName: 'Ngân hàng Ngoại thương',
+    acc: '1053201984',
+    owner: 'HUYNH CONG DUY',
+    qr: 'https://img.vietqr.io/image/vcb-1053201984-compact.jpg',
+    link: 'https://vietqr.net/p/1053201984'
+  },
+  bidv: {
+    name: 'BIDV',
+    fullName: 'Ngân hàng Đầu tư & Phát triển',
+    acc: '6612909907',
+    owner: 'MAYA',
+    qr: 'https://img.vietqr.io/image/bidv-6612909907-compact.jpg',
+    link: 'https://vietqr.net/p/6612909907'
+  },
+  momo: {
+    name: 'MoMo',
+    fullName: 'Ví điện tử MoMo',
+    acc: '0704514772',
+    owner: 'HUYNH CONG DUY',
+    qr: 'https://img.vietqr.io/image/momo-0704514772-compact.jpg',
+    link: 'https://vietqr.net/p/0704514772'
+  },
+};
     
 </section>
 </section>
