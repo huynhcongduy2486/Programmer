@@ -507,5 +507,41 @@ window.onload = function() {
   }, 1000);
 };
 </script>
+<script>
+function openBankApp(bank) {
+    let appLink = "";
+    let fallbackQR = "";
+
+    switch (bank) {
+        case "MB":
+            appLink = "mbbank://";
+            fallbackQR = "https://img.vietqr.io/image/MB-0704514772-compact.png?addInfo=TANGHCD";
+            break;
+
+        case "VCB":
+            appLink = "vietcombank://";
+            fallbackQR = "https://img.vietqr.io/image/VCB-1053201984-compact.png?addInfo=TANGHCD";
+            break;
+
+        case "BIDV":
+            appLink = "bidvsmartbanking://";
+            fallbackQR = "https://img.vietqr.io/image/BIDV-6612909907-compact.png?addInfo=TANGHCD";
+            break;
+
+        case "MOMO":
+            appLink = "momo://";
+            fallbackQR = "https://img.vietqr.io/image/MOMO-0704514772-compact.png?addInfo=TANGHCD";
+            break;
+    }
+
+    // thử mở app
+    window.location.href = appLink;
+
+    // fallback sau 800ms
+    setTimeout(() => {
+        window.location.href = fallbackQR;
+    }, 800);
+}
+</script>
 </body>
 </html>
