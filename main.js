@@ -16,6 +16,36 @@ sections.forEach(sec=>{
   sec.style.transition="all 0.8s ease";
 });
 ---Chuyen khoan---
+/* ===== SCROLL ANIMATION ===== */
+const sections = document.querySelectorAll("section");
+ 
+sections.forEach(sec => {
+  sec.style.opacity = 0;
+  sec.style.transform = "translateY(40px)";
+  sec.style.transition = "all 0.8s ease";
+});
+ 
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = window.scrollY + window.innerHeight;
+    if (top > sec.offsetTop + 100) {
+      sec.style.opacity = 1;
+      sec.style.transform = "translateY(0)";
+    }
+  });
+});
+ 
+/* ===== HAMBURGER MENU ===== */
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+ 
+if (toggle && nav) {
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+}
+ 
+/* ===== QR POPUP ===== */
 function showQRPopup(bankName, acc, owner, bankFull, qrFile) {
   document.getElementById('popupBankName').textContent = bankName;
   document.getElementById('popupOwner').textContent = owner;
@@ -24,6 +54,7 @@ function showQRPopup(bankName, acc, owner, bankFull, qrFile) {
  
   var img = document.getElementById('popupQRImg');
   var noImg = document.getElementById('popupQRNoImg');
+ 
   if (qrFile) {
     img.src = qrFile;
     img.style.display = 'block';
@@ -43,15 +74,17 @@ function closeQRPopup() {
   document.body.style.overflow = '';
 }
  
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') closeQRPopup();
 });
  
 /* ===== COUNTDOWN TIMER 15 PHÚT ===== */
-(function() {
+(function () {
   let totalSecs = 15 * 60;
   const timerEl = document.getElementById('payTimer');
-  const iv = setInterval(function() {
+  if (!timerEl) return;
+ 
+  const iv = setInterval(function () {
     totalSecs--;
     if (totalSecs <= 0) {
       clearInterval(iv);
