@@ -91,86 +91,28 @@ window.onload = function() {
 };
 </script>
 ------
-<script>
-
-let currentBank = "";
-let currentAcc = "";
-
-// Khi bạn mở popup QR thì gọi hàm này
-function showQR(bankName, acc, owner, bankFull, qrFile) {
-
-    currentBank = bankName;
-    currentAcc = acc;
-
-    // ... Giữ nguyên phần code cũ của bạn
-}
-
-
-// Copy số tài khoản
-function copyAccount() {
-    navigator.clipboard.writeText(currentAcc);
-    alert("Đã copy số tài khoản: " + currentAcc);
-}
-
-
-
-// 🚀 NÚT CHUYỂN KHOẢN — TỰ ĐỘNG MỞ APP NGÂN HÀNG
 function transfer() {
 
-    if (!currentBank || !currentAcc) {
-        alert("Chưa có thông tin để chuyển khoản!");
-        return;
-    }
-
-    // Chuẩn hóa bankCode
     let bankCode = "";
 
     if (currentBank.includes("MB")) bankCode = "MB";
     else if (currentBank.includes("Vietcombank") || currentBank.includes("VCB")) bankCode = "VCB";
     else if (currentBank.includes("BIDV")) bankCode = "BIDV";
-    else if (currentBank.includes("MoMo") || currentBank.includes("MOMO")) bankCode = "MOMO";
+    else if (currentBank.includes("MoMo")) bankCode = "MOMO";
 
     if (!bankCode) {
         alert("Không xác định ngân hàng!");
         return;
     }
 
-    // Tạo link mở app BANKING
-    let deepLink = "";
+    let redirectURL = "";
 
-    switch (bankCode) {
-
-        case "MB":
-            // MB Bank mở trực tiếp app
-            deepLink = "mbbank://";
-            break;
-
-        case "VCB":
-            deepLink = "vcb://";
-            break;
-
-        case "BIDV":
-            deepLink = "bidv://";
-            break;
-
-        case "MOMO":
-            deepLink = `momo://app?action=pay&phone=${currentAcc}`;
-            break;
+    if (bankCode === "MOMO") {
+        redirectURL = `https://nhantien.momo.vn/${currentAcc}`;
+    } else {
+        redirectURL = `https://img.vietqr.io/redirect/${bankCode}-${currentAcc}?addInfo=TANGHCD`;
     }
 
-
-    // Link dự phòng VietQR (nếu app không bật)
-    let qrURL = `https://img.vietqr.io/image/${bankCode}-${currentAcc}-compact.png?addInfo=CHUYEN+TIEN`;
-
-
-
-    // 🚀 QUAN TRỌNG: cố mở APP trước
-    window.location.href = deepLink;
-
-    // ⏳ 0.8s sau nếu app không bật → mở VietQR
-    setTimeout(() => {
-        window.open(qrURL, "_blank");
-    }, 800);
+    // mở app ngân hàng (đảm bảo hoạt động)
+    window.location.href = redirectURL;
 }
-
-</script>
