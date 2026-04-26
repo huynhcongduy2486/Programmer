@@ -16,6 +16,9 @@ sections.forEach(sec=>{
   sec.style.transition="all 0.8s ease";
 });
 ---Chuyen khoan---
+/* ================================================
+   PHẦN 1: HAMBURGER MENU
+   ================================================ */
 var toggle = document.getElementById("menu-toggle");
 var navLinks = document.getElementById("nav-links");
 if (toggle && navLinks) {
@@ -23,8 +26,8 @@ if (toggle && navLinks) {
     navLinks.classList.toggle("active");
   });
 }
- 
- 
+
+
 /* ================================================
    PHẦN 2: SCROLL ANIMATION
    ================================================ */
@@ -42,8 +45,8 @@ window.addEventListener("scroll", function () {
     }
   });
 });
- 
- 
+
+
 /* ================================================
    PHẦN 3: QR POPUP - HÀM MỞ / ĐÓNG
    ================================================ */
@@ -52,10 +55,10 @@ function showQR(bankName, acc, owner, bankFull, qrFile) {
   document.getElementById("popupOwner").textContent = owner;
   document.getElementById("popupAcc").textContent = acc;
   document.getElementById("popupBankFull").textContent = bankFull;
- 
+
   var img = document.getElementById("popupQRImg");
   var noImg = document.getElementById("popupQRNoImg");
- 
+
   if (qrFile) {
     img.src = qrFile;
     img.style.display = "block";
@@ -64,22 +67,22 @@ function showQR(bankName, acc, owner, bankFull, qrFile) {
     img.style.display = "none";
     noImg.style.display = "flex";
   }
- 
+
   document.getElementById("qrOverlay").style.display = "flex";
   document.body.style.overflow = "hidden";
 }
- 
+
 function closeQR() {
   document.getElementById("qrOverlay").style.display = "none";
   document.body.style.overflow = "";
 }
- 
- 
+
+
 /* ================================================
    PHẦN 4: GẮN SỰ KIỆN KHI TRANG LOAD XONG
    ================================================ */
 document.addEventListener("DOMContentLoaded", function () {
- 
+
   /* --- Nút ngân hàng --- */
   document.getElementById("btn-mb").addEventListener("click", function () {
     showQR("MB Bank", "0704514772", "HUYNH CONG DUY", "Ngân hàng TMCP Quân đội", "qr-mb.jpg");
@@ -93,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("btn-momo").addEventListener("click", function () {
     showQR("MoMo", "0704514772", "HUYNH CONG DUY", "Ví điện tử MoMo", "");
   });
- 
+
   /* --- Đóng popup --- */
   document.getElementById("btnCloseQR").addEventListener("click", closeQR);
   document.getElementById("qrOverlay").addEventListener("click", function (e) {
@@ -102,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeQR();
   });
- 
+
   /* --- Countdown timer 15 phút --- */
   var totalSecs = 15 * 60;
   var timerEl = document.getElementById("payTimer");
@@ -117,5 +120,5 @@ document.addEventListener("DOMContentLoaded", function () {
     var s = (totalSecs % 60).toString().padStart(2, "0");
     timerEl.textContent = m + ":" + s;
   }, 1000);
- 
+
 });
