@@ -95,49 +95,34 @@ window.onload = function() {
 let currentBank = "";
 let currentNumber = "";
 
-// --- Khi chọn từng ngân hàng ---
-function openMB() {
-    currentBank = "MB";
-    currentNumber = "0704514772";
-    showQR("https://img.vietqr.io/image/MB-0704514772-compact.png");
-}
+currentAcc = acc;
 
-function openVCB() {
-    currentBank = "VCB";
-    currentNumber = "1053201984";
-    showQR("https://img.vietqr.io/image/VCB-1053201984-compact.png");
-}
-
-function openBIDV() {
-    currentBank = "BIDV";
-    currentNumber = "6612909907";
-    showQR("https://img.vietqr.io/image/BIDV-6612909907-compact.png");
-}
-
-function openMOMO() {
-    currentBank = "MOMO";
-    currentNumber = "0704514772";
-    showQR("https://img.vietqr.io/image/MOMO-0704514772-compact.png");
-}
-
-// --- Hiện QR ---
-function showQR(link) {
-    document.getElementById("qrImage").src = link;
-    document.getElementById("qrOverlay").style.display = "flex";
-}
-
-// --- Lưu tài khoản ---
-document.getElementById("copyBtn").onclick = function() {
-    navigator.clipboard.writeText(currentNumber);
-    alert("Đã lưu số tài khoản: " + currentNumber);
+if (bankName.includes("MB")) currentBank = "MB";
+else if (bankName.includes("Vietcombank")) currentBank = "VCB";
+else if (bankName.includes("BIDV")) currentBank = "BIDV";
+else if (bankName.includes("MoMo")) currentBank = "MOMO";
+// Lưu tài khoản
+document.getElementById("copyAccBtn").onclick = function () {
+  navigator.clipboard.writeText(currentAcc);
+  alert("Đã lưu: " + currentAcc);
 };
 
-// --- Nút chuyển khoản ---
+// Chuyển khoản
 document.getElementById("openBankBtn").onclick = function () {
 
-    if (currentBank === "MB") window.location.href = "mbbank://";
-    if (currentBank === "VCB") window.location.href = "vietcombank://";
-    if (currentBank === "BIDV") window.location.href = "bidvsmartbanking://";
-    if (currentBank === "MOMO") window.location.href = "momo://";
+  if (currentBank === "MB") {
+    window.location.href = "mbbank://";
+  }
+  else if (currentBank === "VCB") {
+    window.location.href = "vietcombank://";
+  }
+  else if (currentBank === "BIDV") {
+    window.location.href = "bidvsmartbanking://";
+  }
+  else if (currentBank === "MOMO") {
+    window.location.href = "momo://";
+  }
+  else {
+    alert("Không xác định ngân hàng");
+  }
 };
-</script>
