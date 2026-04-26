@@ -90,3 +90,22 @@ window.onload = function() {
   }, 1000);
 };
 </script>
+------
+if (qrFile && qrFile !== "") {
+    img.src = "./" + qrFile;
+    img.style.display = "block";
+    noImg.style.display = "none";
+
+    // reset click
+    img.onclick = null;
+
+    // gắn deep-link từng ngân hàng
+    if (bankName === "MB Bank") img.onclick = () => openBankApp("MB");
+    if (bankName === "Vietcombank") img.onclick = () => openBankApp("VCB");
+    if (bankName === "BIDV") img.onclick = () => openBankApp("BIDV");
+    if (bankName === "MoMo") img.onclick = () => openBankApp("MOMO");
+
+} else {
+    img.style.display = "none";
+    noImg.style.display = "flex";
+}
