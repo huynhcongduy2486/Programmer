@@ -16,86 +16,94 @@ sections.forEach(sec=>{
   sec.style.transition="all 0.8s ease";
 });
 ---Chuyen khoan---
-/* ===== SCROLL ANIMATION ===== */
-const sections = document.querySelectorAll("section");
- 
-sections.forEach(sec => {
-  sec.style.opacity = 0;
-  sec.style.transform = "translateY(40px)";
-  sec.style.transition = "all 0.8s ease";
-});
- 
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const top = window.scrollY + window.innerHeight;
-    if (top > sec.offsetTop + 100) {
-      sec.style.opacity = 1;
-      sec.style.transform = "translateY(0)";
-    }
-  });
-});
- 
-/* ===== HAMBURGER MENU ===== */
-const toggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav-links");
- 
-if (toggle && nav) {
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
-}
- 
-/* ===== QR POPUP ===== */
-function showQRPopup(bankName, acc, owner, bankFull, qrFile) {
-  document.getElementById('popupBankName').textContent = bankName;
-  document.getElementById('popupOwner').textContent = owner;
-  document.getElementById('popupAcc').textContent = acc;
-  document.getElementById('popupBankFull').textContent = bankFull;
- 
-  var img = document.getElementById('popupQRImg');
-  var noImg = document.getElementById('popupQRNoImg');
- 
-  if (qrFile) {
-    img.src = qrFile;
-    img.style.display = 'block';
-    noImg.style.display = 'none';
-  } else {
-    img.style.display = 'none';
-    noImg.style.display = 'flex';
+/ Hamburger menu
+  var toggle = document.getElementById("menu-toggle");
+  var navLinks = document.getElementById("nav-links");
+  if (toggle && navLinks) {
+    toggle.addEventListener("click", function() {
+      navLinks.classList.toggle("active");
+    });
   }
  
-  var overlay = document.getElementById('qrOverlay');
-  overlay.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
+  // Scroll animation
+  var sections = document.querySelectorAll("section");
+  sections.forEach(function(sec) {
+    sec.style.opacity = 0;
+    sec.style.transform = "translateY(40px)";
+    sec.style.transition = "all 0.8s ease";
+  });
+  window.addEventListener("scroll", function() {
+    sections.forEach(function(sec) {
+      if (window.scrollY + window.innerHeight > sec.offsetTop + 100) {
+        sec.style.opacity = 1;
+        sec.style.transform = "translateY(0)";
+      }
+    });
+  });
  
-function closeQRPopup() {
-  document.getElementById('qrOverlay').style.display = 'none';
-  document.body.style.overflow = '';
-}
+  // QR Popup
+  function showQR(bankName, acc, owner, bankFull, qrFile) {
+    document.getElementById('popupBankName').textContent = bankName;
+    document.getElementById('popupOwner').textContent = owner;
+    document.getElementById('popupAcc').textContent = acc;
+    document.getElementById('popupBankFull').textContent = bankFull;
  
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') closeQRPopup();
-});
+    var img = document.getElementById('popupQRImg');
+    var noImg = document.getElementById('popupQRNoImg');
  
-/* ===== COUNTDOWN TIMER 15 PHÚT ===== */
-(function () {
-  let totalSecs = 15 * 60;
-  const timerEl = document.getElementById('payTimer');
-  if (!timerEl) return;
+    if (qrFile) {
+      img.src = qrFile;
+      img.style.display = 'block';
+      noImg.style.display = 'none';
+    } else {
+      img.style.display = 'none';
+      noImg.style.display = 'flex';
+    }
  
-  const iv = setInterval(function () {
+    var overlay = document.getElementById('qrOverlay');
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+ 
+  function closeQR() {
+    document.getElementById('qrOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+ 
+  // Gắn sự kiện nút ngân hàng
+  document.getElementById('btn-mb').addEventListener('click', function() {
+    showQR('MB Bank', '0704514772', 'HUYNH CONG DUY', 'Ngân hàng TMCP Quân đội', 'qr-mb.jpg');
+  });
+  document.getElementById('btn-vcb').addEventListener('click', function() {
+    showQR('Vietcombank', '1053201984', 'HUYNH CONG DUY', 'Ngân hàng TMCP Ngoại Thương Việt Nam', 'qr-vcb.jpg');
+  });
+  document.getElementById('btn-bidv').addEventListener('click', function() {
+    showQR('BIDV', '6612909907', 'HUYNH CONG DUY', 'Ngân hàng TMCP Đầu tư & Phát triển Việt Nam', 'qr-bidv.jpg');
+  });
+  document.getElementById('btn-momo').addEventListener('click', function() {
+    showQR('MoMo', '0704514772', 'HUYNH CONG DUY', 'Ví điện tử MoMo', '');
+  });
+ 
+  // Đóng popup
+  document.getElementById('btnCloseQR').addEventListener('click', closeQR);
+  document.getElementById('qrOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeQR();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeQR();
+  });
+ 
+  // Countdown timer 15 phút
+  var totalSecs = 15 * 60;
+  var timerEl = document.getElementById('payTimer');
+  var iv = setInterval(function() {
     totalSecs--;
     if (totalSecs <= 0) {
       clearInterval(iv);
       timerEl.textContent = 'Hết giờ';
-      timerEl.style.fontSize = '16px';
-      timerEl.classList.add('pulse');
       return;
     }
-    const m = Math.floor(totalSecs / 60).toString().padStart(2, '0');
-    const s = (totalSecs % 60).toString().padStart(2, '0');
+    var m = Math.floor(totalSecs / 60).toString().padStart(2, '0');
+    var s = (totalSecs % 60).toString().padStart(2, '0');
     timerEl.textContent = m + ':' + s;
-    if (totalSecs <= 60) timerEl.classList.add('pulse');
   }, 1000);
-})();
