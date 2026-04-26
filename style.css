@@ -609,7 +609,68 @@ section{
   transform:translateY(-3px);
 }
 /* ===== Chuyển khoản ===== */
+body {
+  background: #0b1a2a;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+  max-width: 420px;
+  margin: 20px auto;
+}
+
+button {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.bank-active {
+  border: 2px solid #00e5ff !important;
+  box-shadow: 0 0 15px rgba(0,229,255,0.6);
+  transform: scale(1.05);
+}
+
+#qrOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+#qrBox {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 20px;
+  width: 320px;
+  position: relative;
+}
+
+#popupLogo {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+#popupQRImg {
+  width: 220px;
+  border-radius: 10px;
+}
 /* ===== FOOTER ===== */
 footer{
   margin-top:80px;
