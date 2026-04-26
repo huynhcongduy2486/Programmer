@@ -353,65 +353,44 @@ Tôi tin rằng thành công đến từ sự kiên trì, tò mò và không ng�
       <span class="payment-timer-value" id="payTimer">15:00</span>
     </div>
  
-    <!-- Giao diện chọn ngân hàng -->
-    <div id="bankSelectView">
-      <p class="bank-select-label">Chọn ngân hàng để thanh toán</p>
-      <div class="bank-grid">
+    <!-- Giao diện chọn ngân hàng — bấm mở tab mới -->
+    <p class="bank-select-label">Chọn ngân hàng để thanh toán</p>
+    <div class="bank-grid">
  
-        <button class="bank-btn" onclick="openQR('mbbank')">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Logo_MB_new.png" alt="MB Bank" onerror="this.style.display='none'">
-          <span class="bank-btn-name">MB Bank</span>
-          <span class="bank-btn-sub">Quân đội</span>
-        </button>
+      <!-- MB Bank -->
+      <a class="bank-btn" href="https://vietqr.net/p/0704514772" target="_blank" rel="noopener">
+        <img src="logo-mb.png" alt="MB Bank"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="bank-btn-fallback" style="display:none">MB</span>
+        <span class="bank-btn-name">MB Bank</span>
+        <span class="bank-btn-sub">0704514772</span>
+      </a>
  
-        <button class="bank-btn" onclick="openQR('vcb')">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Vietcombank_logo.png" alt="Vietcombank" onerror="this.style.display='none'">
-          <span class="bank-btn-name">Vietcombank</span>
-          <span class="bank-btn-sub">VCB</span>
-        </button>
+      <!-- Vietcombank -->
+      <a class="bank-btn" href="https://vietqr.net/p/1053201984" target="_blank" rel="noopener">
+        <img src="logo-vcb.png" alt="Vietcombank"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="bank-btn-fallback" style="display:none;color:#007b40">VCB</span>
+        <span class="bank-btn-name">Vietcombank</span>
+        <span class="bank-btn-sub">1053201984</span>
+      </a>
  
-        <button class="bank-btn" onclick="openQR('bidv')">
-          <span class="bank-btn-icon" style="color:#1976D2">BIDV</span>
-          <span class="bank-btn-name">BIDV</span>
-          <span class="bank-btn-sub">Đầu tư & Phát triển</span>
-        </button>
+      <!-- BIDV -->
+      <a class="bank-btn" href="https://vietqr.net/p/6612909907" target="_blank" rel="noopener">
+        <img src="logo-bidv.png" alt="BIDV"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="bank-btn-fallback" style="display:none;color:#1976D2">BIDV</span>
+        <span class="bank-btn-name">BIDV</span>
+        <span class="bank-btn-sub">6612909907</span>
+      </a>
  
-        <button class="bank-btn" onclick="openQR('momo')">
-          <span class="bank-btn-icon" style="color:#a50064;font-size:22px">MoMo</span>
-          <span class="bank-btn-name">MoMo</span>
-          <span class="bank-btn-sub">Ví điện tử</span>
-        </button>
- 
-      </div>
-    </div>
- 
-    <!-- Giao diện hiển thị QR -->
-    <div class="qr-panel" id="qrPanel">
-      <button class="qr-back" onclick="closeQR()">
-        <i class="fas fa-arrow-left" style="font-size:12px"></i> Chọn ngân hàng khác
-      </button>
-      <div>
-        <span class="qr-bank-badge" id="qrBankBadge">MB Bank</span>
-      </div>
-      <div class="qr-img-wrap">
-        <img id="qrImage" src="" alt="Mã QR thanh toán">
-      </div>
-      <table class="qr-info-table" id="qrInfoTable">
-        <tr>
-          <td>Chủ tài khoản</td>
-          <td id="qrOwner">—</td>
-        </tr>
-        <tr>
-          <td>Số tài khoản</td>
-          <td id="qrAcc">—</td>
-        </tr>
-        <tr>
-          <td>Ngân hàng</td>
-          <td id="qrBank">—</td>
-        </tr>
-      </table>
-      <a id="qrPageLink" href="#" target="_blank" class="qr-open-link">
-        <i class="fas fa-external-link-alt" style="font-size:12px;margin-right:6px"></i> Mở trang thanh toán
+      <!-- MoMo -->
+      <a class="bank-btn" href="https://nhantien.momo.vn/huynhcongduy" target="_blank" rel="noopener">
+        <img src="logo-momo.png" alt="MoMo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="bank-btn-fallback" style="display:none;color:#a50064">MoMo</span>
+        <span class="bank-btn-name">MoMo</span>
+        <span class="bank-btn-sub">Ví điện tử</span>
       </a>
     </div>
     
