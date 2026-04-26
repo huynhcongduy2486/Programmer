@@ -16,6 +16,38 @@ sections.forEach(sec=>{
   sec.style.transition="all 0.8s ease";
 });
 ---Chuyen khoan---
+function showQRPopup(bankName, acc, owner, bankFull, qrFile) {
+  document.getElementById('popupBankName').textContent = bankName;
+  document.getElementById('popupOwner').textContent = owner;
+  document.getElementById('popupAcc').textContent = acc;
+  document.getElementById('popupBankFull').innerHTML = bankFull;
+ 
+  var img = document.getElementById('popupQRImg');
+  var noImg = document.getElementById('popupQRNoImg');
+  if (qrFile) {
+    img.src = qrFile;
+    img.style.display = 'block';
+    noImg.style.display = 'none';
+  } else {
+    img.style.display = 'none';
+    noImg.style.display = 'flex';
+  }
+ 
+  var overlay = document.getElementById('qrOverlay');
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+ 
+function closeQRPopup() {
+  document.getElementById('qrOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+ 
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeQRPopup();
+});
+ 
+/* ===== COUNTDOWN TIMER 15 PHÚT ===== */
 (function() {
   let totalSecs = 15 * 60;
   const timerEl = document.getElementById('payTimer');
