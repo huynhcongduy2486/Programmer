@@ -126,10 +126,26 @@ function transfer() {
     alert("Không xác định ngân hàng!");
     return;
   }
+document.getElementById("openBankBtn").onclick = function () {
 
-  const url = `https://img.vietqr.io/image/${bankCode}-${currentAcc}-compact.png?addInfo=TANGHCD`;
+  let url = "";
 
-  // 👉 Mở trang VietQR → từ đó mở app banking
+  if (currentBank === "MB") {
+    url = "https://img.vietqr.io/image/MB-0704514772-compact.png?addInfo=TANGHCD";
+  }
+  else if (currentBank === "VCB") {
+    url = "https://img.vietqr.io/image/VCB-1053201984-compact.png?addInfo=TANGHCD";
+  }
+  else if (currentBank === "BIDV") {
+    url = "https://img.vietqr.io/image/BIDV-6612909907-compact.png?addInfo=TANGHCD";
+  }
+  else if (currentBank === "MOMO") {
+    url = "https://nhantien.momo.vn/0704514772";
+  }
+
+  // Mở tab mới (QUAN TRỌNG)
   window.open(url, "_blank");
+
+};
 }
 </script>
