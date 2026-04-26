@@ -387,51 +387,44 @@ Tôi tin rằng thành công đến từ sự kiên trì, tò mò và không ng�
  
     </div>
  
- <section class="support-section">
-  <h2 class="follow-title">Support Me</h2>
- 
-  <div class="payment-container">
- 
-    <!-- Bộ đếm thời gian -->
-    <div class="payment-timer">
-      <span class="payment-timer-label">Phiên thanh toán hết hạn sau</span>
-      <span class="payment-timer-value" id="payTimer">15:00</span>
-    </div>
- 
-    <!-- Chọn ngân hàng -->
-    <p class="bank-select-label">Chọn ngân hàng để xem mã QR</p>
-    <div class="bank-grid">
- 
-      <!-- MB Bank — có ảnh QR local -->
-      <button class="bank-btn" onclick="showQRPopup('MB Bank','0704514772','HUYNH CONG DUY','Ngân hàng TMCP Quân đội','qr-mb.jpg')">
-        <span class="bank-btn-fallback" style="display:flex;color:#0033a0;font-size:24px;font-weight:800">MB</span>
-        <span class="bank-btn-name">MB Bank</span>
-        <span class="bank-btn-sub">0704514772</span>
-      </button>
- 
-      <!-- Vietcombank — có ảnh QR local -->
-      <button class="bank-btn" onclick="showQRPopup('Vietcombank','1053201984','HUYNH CONG DUY','Ngân hàng TMCP Ngoại Thương Việt Nam','qr-vcb.jpg')">
-        <span class="bank-btn-fallback" style="display:flex;color:#007b40;font-size:18px;font-weight:800">VCB</span>
-        <span class="bank-btn-name">Vietcombank</span>
-        <span class="bank-btn-sub">1053201984</span>
-      </button>
- 
-      <!-- BIDV — có ảnh QR local -->
-      <button class="bank-btn" onclick="showQRPopup('BIDV','6612909907','HUYNH CONG DUY','Ngân hàng TMCP Đầu tư &amp; Phát triển Việt Nam','qr-bidv.jpg')">
-        <span class="bank-btn-fallback" style="display:flex;color:#1976D2;font-size:22px;font-weight:800">BIDV</span>
-        <span class="bank-btn-name">BIDV</span>
-        <span class="bank-btn-sub">6612909907</span>
-      </button>
- 
-      <!-- MoMo -->
-      <button class="bank-btn" onclick="showQRPopup('MoMo','0704514772','HUYNH CONG DUY','Ví điện tử MoMo','')">
-        <span class="bank-btn-fallback" style="display:flex;color:#a50064;font-size:20px;font-weight:800">MoMo</span>
-        <span class="bank-btn-name">MoMo</span>
-        <span class="bank-btn-sub">0704514772</span>
-      </button>
- 
-    </div>
   </div>
+</section>
+ 
+<!-- ===== POPUP QR ===== -->
+<div id="qrOverlay" onclick="closeQRPopup()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;align-items:center;justify-content:center;padding:16px">
+  <div onclick="event.stopPropagation()" style="background:#fff;border-radius:20px;padding:24px 20px;max-width:340px;width:100%;text-align:center;position:relative">
+ 
+    <!-- Nút đóng -->
+    <button onclick="closeQRPopup()" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#666;line-height:1">&times;</button>
+ 
+    <!-- Tên ngân hàng -->
+    <div id="popupBankName" style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;color:#222;margin-bottom:4px"></div>
+ 
+    <!-- Ảnh QR -->
+    <div id="popupQRWrap" style="margin:12px auto">
+      <img id="popupQRImg" src="" alt="QR" style="width:220px;height:220px;object-fit:contain;border-radius:10px">
+      <div id="popupQRNoImg" style="display:none;width:220px;height:220px;margin:0 auto;background:#f5f5f5;border-radius:10px;display:none;align-items:center;justify-content:center;font-size:13px;color:#999">Chưa có ảnh QR</div>
+    </div>
+ 
+    <!-- Thông tin tài khoản -->
+    <table style="width:100%;font-family:'Poppins',sans-serif;font-size:13px;border-collapse:collapse;margin-top:8px;text-align:left">
+      <tr>
+        <td style="color:#888;padding:5px 0;width:45%">Chủ tài khoản</td>
+        <td style="font-weight:600;color:#222;padding:5px 0" id="popupOwner"></td>
+      </tr>
+      <tr>
+        <td style="color:#888;padding:5px 0;border-top:1px solid #f0f0f0">Số tài khoản</td>
+        <td style="font-weight:700;color:#1976D2;padding:5px 0;border-top:1px solid #f0f0f0" id="popupAcc"></td>
+      </tr>
+      <tr>
+        <td style="color:#888;padding:5px 0;border-top:1px solid #f0f0f0">Ngân hàng</td>
+        <td style="font-weight:600;color:#222;padding:5px 0;border-top:1px solid #f0f0f0;font-size:11px" id="popupBankFull"></td>
+      </tr>
+    </table>
+ 
+    <p style="font-family:'Poppins',sans-serif;font-size:11px;color:#aaa;margin-top:12px">Quét mã để chuyển khoản • Nội dung: TANGHCD</p>
+  </div>
+</div>
     
 </section>
 </section>
