@@ -20,7 +20,7 @@ function showQRPopup(bankName, acc, owner, bankFull, qrFile) {
   document.getElementById('popupBankName').textContent = bankName;
   document.getElementById('popupOwner').textContent = owner;
   document.getElementById('popupAcc').textContent = acc;
-  document.getElementById('popupBankFull').innerHTML = bankFull;
+  document.getElementById('popupBankFull').textContent = bankFull;
  
   var img = document.getElementById('popupQRImg');
   var noImg = document.getElementById('popupQRNoImg');
