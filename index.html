@@ -479,14 +479,22 @@ function closeQR() {
 // ===== CHUYỂN KHOẢN =====
 function transfer() {
   const bank = document.getElementById("popupBankFull").textContent;
+
   if (bank.includes("MoMo")) {
-    window.open("https://nhantien.momo.vn/0704514772", "_blank");
+    window.location.href = "momo://transfer?phone=0704514772";
+    setTimeout(() => window.open("https://nhantien.momo.vn/0704514772", "_blank"), 2000);
+
   } else if (bank.includes("Quân đội")) {
-    window.open("https://online.mbbank.com.vn/", "_blank");
+    window.location.href = "mbmobile://transfer?accountNo=0704514772";
+    setTimeout(() => window.open("https://online.mbbank.com.vn/", "_blank"), 2000);
+
   } else if (bank.includes("Ngoại Thương")) {
-    window.open("https://vcbdigibank.vietcombank.com.vn/", "_blank");
+    window.location.href = "vietcombank://transfer?accountNo=1053201984";
+    setTimeout(() => window.open("https://vcbdigibank.vietcombank.com.vn/", "_blank"), 2000);
+
   } else if (bank.includes("Đầu tư")) {
-    window.open("https://smartbanking.bidv.com.vn/", "_blank");
+    window.location.href = "bidv://transfer?accountNo=6612909907";
+    setTimeout(() => window.open("https://smartbanking.bidv.com.vn/", "_blank"), 2000);
   }
 }
  
