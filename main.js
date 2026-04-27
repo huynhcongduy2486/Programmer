@@ -92,12 +92,9 @@ window.onload = function() {
 </script>
 ------
 function transfer() {
-  // Lấy số tài khoản hiện tại đang hiển thị trong popup
-  const acc = document.getElementById("popupAcc").textContent;
   const bank = document.getElementById("popupBankFull").textContent;
 
   if (bank.includes("MoMo")) {
-    // Mở app MoMo chuyển khoản
     window.open("https://nhantien.momo.vn/0704514772", "_blank");
   } else if (bank.includes("Quân đội")) {
     window.open("https://online.mbbank.com.vn/", "_blank");
@@ -106,4 +103,11 @@ function transfer() {
   } else if (bank.includes("Đầu tư")) {
     window.open("https://smartbanking.bidv.com.vn/", "_blank");
   }
+}
+
+function copyAccount() {
+  const acc = document.getElementById("popupAcc").textContent;
+  navigator.clipboard.writeText(acc).then(() => {
+    alert("Đã sao chép số tài khoản: " + acc);
+  });
 }
