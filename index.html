@@ -476,7 +476,29 @@ function closeQR() {
   document.getElementById("qrOverlay").style.display = "none";
   document.body.style.overflow = "";
 }
-
+// ===== CHUYỂN KHOẢN =====
+function transfer() {
+  const bank = document.getElementById("popupBankFull").textContent;
+  if (bank.includes("MoMo")) {
+    window.open("https://nhantien.momo.vn/0704514772", "_blank");
+  } else if (bank.includes("Quân đội")) {
+    window.open("https://online.mbbank.com.vn/", "_blank");
+  } else if (bank.includes("Ngoại Thương")) {
+    window.open("https://vcbdigibank.vietcombank.com.vn/", "_blank");
+  } else if (bank.includes("Đầu tư")) {
+    window.open("https://smartbanking.bidv.com.vn/", "_blank");
+  }
+}
+ 
+// ===== LƯU TÀI KHOẢN =====
+function copyAccount() {
+  const acc = document.getElementById("popupAcc").textContent;
+  navigator.clipboard.writeText(acc).then(() => {
+    alert("Đã sao chép số tài khoản: " + acc);
+  }).catch(() => {
+    prompt("Sao chép số tài khoản:", acc);
+  });
+}
 window.onload = function() {
 
   const mb = document.getElementById("btn-mb");
