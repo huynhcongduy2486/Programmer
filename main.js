@@ -92,27 +92,18 @@ window.onload = function() {
 </script>
 ------
 function transfer() {
+  // Lấy số tài khoản hiện tại đang hiển thị trong popup
+  const acc = document.getElementById("popupAcc").textContent;
+  const bank = document.getElementById("popupBankFull").textContent;
 
-    let bankCode = "";
-
-    if (currentBank.includes("MB")) bankCode = "MB";
-    else if (currentBank.includes("Vietcombank") || currentBank.includes("VCB")) bankCode = "VCB";
-    else if (currentBank.includes("BIDV")) bankCode = "BIDV";
-    else if (currentBank.includes("MoMo")) bankCode = "MOMO";
-
-    if (!bankCode) {
-        alert("Không xác định ngân hàng!");
-        return;
-    }
-
-    let redirectURL = "";
-
-    if (bankCode === "MOMO") {
-        redirectURL = `https://nhantien.momo.vn/${currentAcc}`;
-    } else {
-        redirectURL = `https://img.vietqr.io/redirect/${bankCode}-${currentAcc}?addInfo=TANGHCD`;
-    }
-
-    // mở app ngân hàng (đảm bảo hoạt động)
-    window.location.href = redirectURL;
+  if (bank.includes("MoMo")) {
+    // Mở app MoMo chuyển khoản
+    window.open("https://nhantien.momo.vn/0704514772", "_blank");
+  } else if (bank.includes("Quân đội")) {
+    window.open("https://online.mbbank.com.vn/", "_blank");
+  } else if (bank.includes("Ngoại Thương")) {
+    window.open("https://vcbdigibank.vietcombank.com.vn/", "_blank");
+  } else if (bank.includes("Đầu tư")) {
+    window.open("https://smartbanking.bidv.com.vn/", "_blank");
+  }
 }
