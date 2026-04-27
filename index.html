@@ -479,14 +479,17 @@ function closeQR() {
 // ===== CHUYỂN KHOẢN =====
 function transfer() {
   const bank = document.getElementById("popupBankFull").textContent;
+  const acc = document.getElementById("popupAcc").textContent;
+
   if (bank.includes("MoMo")) {
     window.open("https://nhantien.momo.vn/0704514772", "_blank");
   } else if (bank.includes("Quân đội")) {
-    window.open("https://online.mbbank.com.vn/", "_blank");
+    // VietQR mở app ngân hàng hỗ trợ
+    window.open("https://img.vietqr.io/image/MB-0704514772-qr_only.jpg", "_blank");
   } else if (bank.includes("Ngoại Thương")) {
-    window.open("https://vcbdigibank.vietcombank.com.vn/", "_blank");
+    window.open("https://img.vietqr.io/image/VCB-1053201984-qr_only.jpg", "_blank");
   } else if (bank.includes("Đầu tư")) {
-    window.open("https://smartbanking.bidv.com.vn/", "_blank");
+    window.open("https://img.vietqr.io/image/BIDV-6612909907-qr_only.jpg", "_blank");
   }
 }
  
