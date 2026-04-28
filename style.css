@@ -402,6 +402,79 @@ section{
     padding: 30px 20px;
   }
 }
+/* =========================================
+   PASSIONS & PERSPECTIVES SECTION
+   ========================================= */
+.passions-section {
+  padding: 80px 20px;
+  background-color: #f9fbfd; /* Nền xám xanh nhạt giúp phân tách khối */
+  text-align: center;
+}
+
+.passions-section h2 {
+  font-size: 2.2rem;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.passions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.passion-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  text-align: left;
+}
+
+.passion-card:hover {
+  transform: translateY(-8px);
+  border-color: #1565c0;
+  box-shadow: 0 15px 35px rgba(21, 101, 192, 0.1);
+}
+
+.passion-icon {
+  font-size: 2.5rem;
+  color: #1565c0;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.passion-card h3 {
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.passion-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.passion-tags {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.passion-tags span {
+  font-size: 0.75rem;
+  background: #f0f4f8;
+  color: #444;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+}
 /* ===== CONTACT FULL FIX ===== */
 
 .contact-section {
