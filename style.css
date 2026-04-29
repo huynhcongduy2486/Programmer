@@ -180,88 +180,219 @@ section{
 .btn:hover{
   background:#38bdf8;
 }
-/* =======================================================
-   CSS CHO NÚT TRẠNG THÁI HOẠT ĐỘNG (CĂN GIỮA TUYỆT ĐỐI)
-   ======================================================= */
+/* ===== CSS CHO NÚT XANH HOẠT ĐỘNG NHẤP NHÁY ===== */
 
-/* 1. Container bao quanh ảnh đại diện */
+/* Đảm bảo container ảnh làm điểm tựa để gắn nút */
 .avatar-container {
-    position: relative; 
-    display: inline-block;
-    /* Đảm bảo khung này có kích thước bằng với ảnh avatar của bạn */
+    position: relative; 
+    display: inline-block;
 }
 
-/* 2. Lớp bọc chung để định vị toàn bộ cụm nút xanh */
+/* Cấu trúc nút tổng thể */
 .active-status-wrapper {
-    position: absolute;
-    width: 32px;  /* Vùng hiệu ứng */
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
+    position: absolute;
+    width: 32px; /* Kích thước vùng hiệu ứng */
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* 3. ĐÃ SỬA: Căn chỉnh cụm nút vào CHÍNH GIỮA khung hình */
-.avatar-blinking-dot {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Kỹ thuật giúp tâm nút trùng tâm ảnh */
-}
-
-/* 4. Chấm xanh lá cây (Cố định ở lõi) */
+/* Chấm xanh lá cây cố định ở giữa */
 .active-status-dot {
-    width: 14px; 
-    height: 14px;
-    background-color: #2ECC71;
-    border-radius: 50%;
-    border: 2px solid white; /* Viền trắng sát chấm xanh */
-    box-shadow: 0 0 0 2px white; /* Tạo thêm độ dày cho viền trắng */
-    position: relative;
-    z-index: 2;
+    width: 14px; 
+    height: 14px;
+    background-color: #2ECC71;
+    border-radius: 50%;
+    border: 2px solid white; /* Viền trắng bao quanh chấm xanh */
+    box-shadow: 0 0 0 3px white; /* Vòng trắng lớn hơn */
+    position: relative;
+    z-index: 2;
 }
 
-/* 5. Hiệu ứng sóng tỏa ra (Nhấp nháy) */
+/* Hiệu ứng sóng tỏa ra (nhấp nháy) */
 .active-status-wrapper::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(46, 204, 113, 0.6);
-    border-radius: 50%;
-    animation: pulse-effect 1.8s infinite ease-out;
-    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 204, 113, 0.6);
+    border-radius: 50%;
+    animation: pulse-effect 1.8s infinite ease-out;
+    z-index: 1;
 }
 
-/* 6. Keyframes điều khiển nhịp đập của sóng */
+/* Keyframes điều khiển nhịp đập */
 @keyframes pulse-effect {
-    0% {
-        transform: scale(0.7);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1.8);
-        opacity: 0;
-    }
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.6); opacity: 0; }
 }
 
-/* 7. Responsive: Điều chỉnh kích thước cho màn hình di động */
+/* ĐÃ SỬA: Căn chỉnh vị trí nút nằm ép vào viền tròn của ảnh */
+.avatar-blinking-dot {
+    bottom: 12%;  /* Thay vì px, dùng % để ôm sát viền tròn */
+    right: 12%;   /* Dùng % để nó tự động kéo vào trong góc */
+}
+
+/* Reponsive: Thu nhỏ nút một chút trên màn hình điện thoại */
 @media (max-width: 768px) {
-    .active-status-wrapper {
-        width: 24px;
-        height: 24px;
-    }
-    .active-status-dot {
-        width: 10px;
-        height: 10px;
-        border-width: 1.5px;
-    }
-    /* Vẫn giữ căn giữa trên Mobile */
-    .avatar-blinking-dot {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    .active-status-wrapper {
+        width: 26px;
+        height: 26px;
+    }
+    .active-status-dot {
+        width: 7px;
+        height: 7px;
+    }
+    /* ĐÃ SỬA CHO MOBILE */
+    .avatar-blinking-dot {
+        bottom: 9.5%; 
+        right: 9.5%;
+    }
+} k /* ===== CSS CHO NÚT XANH HOẠT ĐỘNG NHẤP NHÁY ===== */
+
+/* Đảm bảo container ảnh làm điểm tựa để gắn nút */
+.avatar-container {
+    position: relative; 
+    display: inline-block;
+}
+
+/* Cấu trúc nút tổng thể */
+.active-status-wrapper {
+    position: absolute;
+    width: 32px; /* Kích thước vùng hiệu ứng */
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Chấm xanh lá cây cố định ở giữa */
+.active-status-dot {
+    width: 14px; 
+    height: 14px;
+    background-color: #2ECC71;
+    border-radius: 50%;
+    border: 2px solid white; /* Viền trắng bao quanh chấm xanh */
+    box-shadow: 0 0 0 3px white; /* Vòng trắng lớn hơn */
+    position: relative;
+    z-index: 2;
+}
+
+/* Hiệu ứng sóng tỏa ra (nhấp nháy) */
+.active-status-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 204, 113, 0.6);
+    border-radius: 50%;
+    animation: pulse-effect 1.8s infinite ease-out;
+    z-index: 1;
+}
+
+/* Keyframes điều khiển nhịp đập */
+@keyframes pulse-effect {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ĐÃ SỬA: Căn chỉnh vị trí nút nằm ép vào viền tròn của ảnh */
+.avatar-blinking-dot {
+    bottom: 12%;  /* Thay vì px, dùng % để ôm sát viền tròn */
+    right: 12%;   /* Dùng % để nó tự động kéo vào trong góc */
+}
+
+/* Reponsive: Thu nhỏ nút một chút trên màn hình điện thoại */
+@media (max-width: 768px) {
+    .active-status-wrapper {
+        width: 26px;
+        height: 26px;
+    }
+    .active-status-dot {
+        width: 7px;
+        height: 7px;
+    }
+    /* ĐÃ SỬA CHO MOBILE */
+    .avatar-blinking-dot {
+        bottom: 9.5%; 
+        right: 9.5%;
+    }
+}/* ===== CSS CHO NÚT XANH HOẠT ĐỘNG NHẤP NHÁY ===== */
+
+/* Đảm bảo container ảnh làm điểm tựa để gắn nút */
+.avatar-container {
+    position: relative; 
+    display: inline-block;
+}
+
+/* Cấu trúc nút tổng thể */
+.active-status-wrapper {
+    position: absolute;
+    width: 32px; /* Kích thước vùng hiệu ứng */
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Chấm xanh lá cây cố định ở giữa */
+.active-status-dot {
+    width: 14px; 
+    height: 14px;
+    background-color: #2ECC71;
+    border-radius: 50%;
+    border: 2px solid white; /* Viền trắng bao quanh chấm xanh */
+    box-shadow: 0 0 0 3px white; /* Vòng trắng lớn hơn */
+    position: relative;
+    z-index: 2;
+}
+
+/* Hiệu ứng sóng tỏa ra (nhấp nháy) */
+.active-status-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 204, 113, 0.6);
+    border-radius: 50%;
+    animation: pulse-effect 1.8s infinite ease-out;
+    z-index: 1;
+}
+
+/* Keyframes điều khiển nhịp đập */
+@keyframes pulse-effect {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ĐÃ SỬA: Căn chỉnh vị trí nút nằm ép vào viền tròn của ảnh */
+.avatar-blinking-dot {
+    bottom: 12%;  /* Thay vì px, dùng % để ôm sát viền tròn */
+    right: 12%;   /* Dùng % để nó tự động kéo vào trong góc */
+}
+
+/* Reponsive: Thu nhỏ nút một chút trên màn hình điện thoại */
+@media (max-width: 768px) {
+    .active-status-wrapper {
+        width: 26px;
+        height: 26px;
+    }
+    .active-status-dot {
+        width: 7px;
+        height: 7px;
+    }
+    /* ĐÃ SỬA CHO MOBILE */
+    .avatar-blinking-dot {
+        bottom: 9.5%; 
+        right: 9.5%;
+    }
 }
 /* ===== ABOUT ===== */
 .about-section{
