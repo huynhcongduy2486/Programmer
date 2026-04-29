@@ -230,10 +230,10 @@ section{
     100% { transform: scale(1.6); opacity: 0; }
 }
 
-/* Căn chỉnh vị trí nút nằm ở góc dưới bên phải ảnh đại diện */
+/* ĐÃ SỬA: Căn chỉnh vị trí nút nằm ép vào viền tròn của ảnh */
 .avatar-blinking-dot {
-    bottom: 5px;  /* Tăng giảm số này để đẩy nút lên/xuống */
-    right: 5px;   /* Tăng giảm số này để đẩy nút sang trái/phải */
+    bottom: 12%;  /* Thay vì px, dùng % để ôm sát viền tròn */
+    right: 12%;   /* Dùng % để nó tự động kéo vào trong góc */
 }
 
 /* Reponsive: Thu nhỏ nút một chút trên màn hình điện thoại */
@@ -246,9 +246,10 @@ section{
         width: 12px;
         height: 12px;
     }
+    /* ĐÃ SỬA CHO MOBILE */
     .avatar-blinking-dot {
-        bottom: 2px;
-        right: 2px;
+        bottom: 10%; 
+        right: 10%;
     }
 }
 /* ===== ABOUT ===== */
