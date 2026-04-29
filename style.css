@@ -243,8 +243,8 @@ section{
         height: 26px;
     }
     .active-status-dot {
-        width: 10px;
-        height: 10px;
+        width: 7px;
+        height: 7px;
     }
     /* ĐÃ SỬA CHO MOBILE */
     .avatar-blinking-dot {
