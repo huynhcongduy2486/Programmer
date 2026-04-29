@@ -244,14 +244,14 @@ section{
     }
    /* Đẩy nút ra sát viền xanh */
 .avatar-blinking-dot {
-    bottom: 6%;  /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
-    right: 6%;   /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+    bottom: 4%;  /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+    right: 4%;   /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
 }
 
 @media (max-width: 768px) {
     .avatar-blinking-dot {
-        bottom: 7%; 
-        right: 7%;
+        bottom: 10%; 
+        right: 10%;
     }
 }
 }
