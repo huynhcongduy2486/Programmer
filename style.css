@@ -244,8 +244,8 @@ section{
     }
    /* Đẩy nút ra sát viền xanh */
 .avatar-blinking-dot {
-    bottom: 0%;  /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
-    right: 0%;   /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+    bottom: -2%;  /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+    right: -2%;   /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
 }
 
 @media (max-width: 768px) {
