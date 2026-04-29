@@ -242,15 +242,18 @@ section{
         width: 26px;
         height: 26px;
     }
-    .active-status-dot {
-        width: 12px;
-        height: 12px;
-    }
-    /* ĐÃ SỬA CHO MOBILE */
+   /* Đẩy nút ra sát viền xanh */
+.avatar-blinking-dot {
+    bottom: 7%;  /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+    right: 7%;   /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+}
+
+@media (max-width: 768px) {
     .avatar-blinking-dot {
-        bottom: 10%; 
-        right: 10%;
+        bottom: 5%; 
+        right: 5%;
     }
+}
 }
 /* ===== ABOUT ===== */
 .about-section{
