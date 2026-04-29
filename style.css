@@ -232,8 +232,8 @@ section{
 
 /* ĐÃ SỬA: Căn chỉnh vị trí nút nằm ép vào viền tròn của ảnh */
 .avatar-blinking-dot {
-    bottom: 10%;  /* Thay vì px, dùng % để ôm sát viền tròn */
-    right: 10%;   /* Dùng % để nó tự động kéo vào trong góc */
+    bottom: 12%;  /* Thay vì px, dùng % để ôm sát viền tròn */
+    right: 12%;   /* Dùng % để nó tự động kéo vào trong góc */
 }
 
 /* Reponsive: Thu nhỏ nút một chút trên màn hình điện thoại */
@@ -243,8 +243,8 @@ section{
         height: 26px;
     }
     .active-status-dot {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
     }
     /* ĐÃ SỬA CHO MOBILE */
     .avatar-blinking-dot {
