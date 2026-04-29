@@ -230,28 +230,37 @@ section{
     100% { transform: scale(1.6); opacity: 0; }
 }
 
-/* ĐÃ SỬA: Căn chỉnh vị trí nút nằm ép vào viền tròn của ảnh */
-.avatar-blinking-dot {
-    bottom: 12%;  /* Thay vì px, dùng % để ôm sát viền tròn */
-    right: 12%;   /* Dùng % để nó tự động kéo vào trong góc */
+/* Cấu trúc chung cho Wrapper chứa Avatar và Dot */
+.active-status-wrapper {
+    position: relative;
+    display: inline-block;
 }
 
-/* Reponsive: Thu nhỏ nút một chút trên màn hình điện thoại */
-@media (max-width: 768px) {
-    .active-status-wrapper {
-        width: 26px;
-        height: 26px;
-    }
-   /* Đẩy nút ra sát viền xanh */
+/* Phần chấm xanh trên Desktop */
 .avatar-blinking-dot {
-    bottom: -4%;  /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
-    right: -4%;   /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+    position: absolute;
+    width: 15px;  /* Chỉnh size tùy ý */
+    height: 15px;
+    background-color: #2ecc71; /* Màu xanh */
+    border-radius: 50%;
+    border: 2px solid #fff; /* Tạo viền trắng để tách biệt với avatar */
+    
+    /* Vị trí chuẩn cho hình tròn */
+    bottom: 8%; 
+    right: 8%;
+    
+    /* Giúp chấm nằm chính xác hơn trên đường cong */
+    transform: translate(25%, 25%); 
+    z-index: 10;
 }
 
+/* Điều chỉnh riêng cho Mobile (max-width: 768px) */
 @media (max-width: 768px) {
     .avatar-blinking-dot {
-        bottom: 9.75%; 
-        right: 9.75%;
+        width: 12px;
+        height: 12px;
+        bottom: 10%;
+        right: 10%;
     }
 }
 }
