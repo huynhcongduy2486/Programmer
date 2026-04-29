@@ -230,37 +230,31 @@ section{
     100% { transform: scale(1.6); opacity: 0; }
 }
 
-/* Cấu trúc chung cho Wrapper chứa Avatar và Dot */
-.active-status-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-/* Phần chấm xanh trên Desktop */
 .avatar-blinking-dot {
     position: absolute;
-    width: 15px;  /* Chỉnh size tùy ý */
-    height: 15px;
-    background-color: #2ecc71; /* Màu xanh */
+    /* Dùng số dương để đưa nó vào trong khung hình vuông */
+    bottom: 12%; 
+    right: 12%;
+    
+    /* Cực kỳ quan trọng: Dịch chuyển tâm của chấm vào đúng tọa độ */
+    transform: translate(50%, 50%);
+    
+    /* Kích thước chấm */
+    width: 14px;
+    height: 14px;
+    background-color: #2ecc71;
     border-radius: 50%;
-    border: 2px solid #fff; /* Tạo viền trắng để tách biệt với avatar */
-    
-    /* Vị trí chuẩn cho hình tròn */
-    bottom: 8%; 
-    right: 8%;
-    
-    /* Giúp chấm nằm chính xác hơn trên đường cong */
-    transform: translate(25%, 25%); 
+    border: 2px solid #111; /* Màu viền trùng với màu nền của bạn để trông sắc nét */
     z-index: 10;
 }
 
-/* Điều chỉnh riêng cho Mobile (max-width: 768px) */
+/* Fix cho Mobile */
 @media (max-width: 768px) {
     .avatar-blinking-dot {
+        bottom: 14%;
+        right: 14%;
         width: 12px;
         height: 12px;
-        bottom: 10%;
-        right: 10%;
     }
 }
 }
