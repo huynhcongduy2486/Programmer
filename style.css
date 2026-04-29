@@ -230,31 +230,23 @@ section{
     100% { transform: scale(1.6); opacity: 0; }
 }
 
-.avatar-blinking-dot {
-    position: absolute;
-    /* Dùng số dương để đưa nó vào trong khung hình vuông */
-    bottom: 12%; 
-    right: 12%;
-    
-    /* Cực kỳ quan trọng: Dịch chuyển tâm của chấm vào đúng tọa độ */
-    transform: translate(50%, 50%);
-    
-    /* Kích thước chấm */
-    width: 14px;
-    height: 14px;
-    background-color: #2ecc71;
-    border-radius: 50%;
-    border: 2px solid #111; /* Màu viền trùng với màu nền của bạn để trông sắc nét */
-    z-index: 10;
-}
+@media (max-width: 768px) {
+    .active-status-wrapper {
+        width: 26px;
+        height: 26px;
 
-/* Fix cho Mobile */
+    }
+   /* Đẩy nút ra sát viền xanh */
+
+.avatar-blinking-dot {
+    bottom: -4%;  /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+    right: -4%;   /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+
+}
 @media (max-width: 768px) {
     .avatar-blinking-dot {
-        bottom: 14%;
-        right: 14%;
-        width: 12px;
-        height: 12px;
+        bottom: 9.75%; 
+        right: 9.75%;
     }
 }
 }
