@@ -254,8 +254,8 @@ section{
 }
 /* Đẩy nút ra sát viền xanh */
 .avatar-blinking-dot {
-    bottom: 8.5%;  /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
-    right: 8.5%;   /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+    bottom: 8%;  /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
+    right: 8%;   /* Giảm từ 12% xuống 7% để đẩy ra ngoài */
 }
 /* ===== ABOUT ===== */
 .about-section{
