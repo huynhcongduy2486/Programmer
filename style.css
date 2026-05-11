@@ -180,62 +180,69 @@ section{
 .btn:hover{
   background:#38bdf8;
 }
-/* --- CSS cho Globe Avatar và Quỹ đạo quay màu cam --- */
-
-/* Container chính của Orbiter */
-.globe-orbit-container {
-  position: relative; /* Cần thiết để các phần tử con định vị theo nó */
-  width: 150px; /* Điều chỉnh kích thước nếu cần */
-  height: 150px;
+/* Container tổng thể */
+.globe-orbit-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 30px; /* Căn giữa và tạo khoảng cách */
+}
+
+/* Quả địa cầu trung tâm và hiệu ứng phát sáng xanh */
+.globe-main {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, #1e3a8a, #000); /* Nền cầu mờ ảo */
   border-radius: 50%;
-  
-  /* Tạo viền mờ màu xanh xung quanh như hình gốc */
-  border: 4px solid rgba(135, 206, 235, 0.5); /* Màu xanh trời mờ */
-  background: rgba(255, 255, 255, 0.05); /* Nền mờ cực nhẹ */
-  box-shadow: 0 0 15px rgba(135, 206, 235, 0.3); /* Bóng đổ màu xanh nhẹ */
-  overflow: visible; /* Cho phép đường quỹ đạo đi ra ngoài */
-}
-
-/* Biểu tượng quả địa cầu */
-.globe-icon {
-  font-size: 80px; /* Kích thước icon quả địa cầu */
-  /* Màu sắc đã được đặt trong HTML */
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2; /* Nằm trên đường quỹ đạo */
+  font-size: 85px;
+  color: #4db8ff; /* Màu xanh địa cầu sáng */
+  border: 3px solid #4db8ff;
+  box-shadow: 0 0 25px rgba(77, 184, 255, 0.6); /* Hào quang xanh */
+  z-index: 2;
 }
 
-/* --- Tạo hiệu ứng ĐƯỜNG KẺ xoay vòng (Orbit) --- */
-/* Sử dụng pseudo-element ::after để tạo đường quỹ đạo */
-.globe-orbit-container::after {
-  content: '';
+/* ĐƯỜNG KẺ XOAY TRÒN (Orbit) */
+.globe-orbit-wrapper::before {
+  content: "";
   position: absolute;
-  top: -10px; /* Đẩy ra ngoài container 10px ở mọi phía */
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
+  width: 180px; /* Lớn hơn globe để bao quanh */
+  height: 180px;
   border-radius: 50%;
+  /* Tạo đường kẻ màu cam khuyết */
+  border: 3px solid transparent;
+  border-top: 3px solid #ff9800; 
+  border-right: 3px solid #ff9800;
   
-  /* Tạo ĐƯỜNG KẺ xoay vòng (nửa vòng tròn màu cam) */
-  border: 4px solid transparent; /* Các cạnh khác trong suốt */
-  border-top-color: #ff9800; /* Đường kẻ màu cam ở trên */
-  border-right-color: #ff9800; /* Đường kẻ màu cam ở bên phải */
+  /* Hiệu ứng bóng đổ cho đường kẻ rực rỡ hơn */
+  filter: drop-shadow(0 0 5px #ff9800);
   
-  /* Hiệu ứng bóng đổ mờ để trông đẹp hơn */
-  box-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
-  
-  /* Animation quay */
-  animation: orbit-rotate 3s linear infinite;
-  z-index: 1; /* Nằm dưới globe icon nhưng trên container */
+  /* Lệnh xoay quan trọng nhất */
+  animation: rotate-orbit 3s linear infinite;
+  z-index: 1;
 }
 
-/* Định nghĩa animation quay cho quỹ đạo */
-@keyframes orbit-rotate {
+/* Chấm trạng thái xanh lá */
+.active-status-dot {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 15px;
+  height: 15px;
+  background: #2ecc71;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 10px #2ecc71;
+}
+
+/* ANIMATION XOAY 360 ĐỘ */
+@keyframes rotate-orbit {
   from {
     transform: rotate(0deg);
   }
@@ -244,15 +251,8 @@ section{
   }
 }
 
-/* Ẩn ảnh avatar cũ nếu nó còn tồn tại */
-.globe-orbit-container .avatar {
-  display: none !important;
-}
-
-/* Giữ cho dot trạng thái nằm đúng vị trí */
-.globe-orbit-container .active-status-wrapper {
-  z-index: 3; /* Nằm trên cùng */
-}
+/* Đảm bảo ảnh cũ không hiện ra đè lên */
+.avatar { display: none !important; }
 /* ===== CSS CHO NÚT XANH HOẠT ĐỘNG NHẤP NHÁY ===== */
 
 /* Đảm bảo container ảnh làm điểm tựa để gắn nút */
