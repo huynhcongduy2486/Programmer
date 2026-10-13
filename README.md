@@ -1,10 +1,10 @@
 
-# Portfolio Huỳnh Công Duy
+# Huỳnh Công Duy
 
 Machine Learning Engineer  
 Passionate about AI technology and holistic wellness.
 
-## 🌐 Live Website
+## 🌐Website
 👉https://huynhcongduy2486.github.io/Programmer/
 
 ## ✨About Me
